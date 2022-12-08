@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -9,9 +10,13 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 export class LoginComponent implements OnInit {
 
   formularioLogin: FormGroup
+  currentHour: any
+  saludo: string
 
 
   constructor() {
+    this.currentHour = new Date().getHours();
+    this.saludo = ''
 
     this.formularioLogin = new FormGroup({
       dni: new FormControl('', [
@@ -29,8 +34,16 @@ export class LoginComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
+
+    if (this.currentHour < 12) {
+      this.saludo = 'Buenos días';
+    } else {
+      this.saludo = 'Buenas tardes';
+    }
+
+
+
 
   }
 
