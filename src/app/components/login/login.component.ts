@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(8)
-
       ]
       )
     })
@@ -36,6 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.formularioLogin.value)
 
     // enviar a la base de datos para que nos de la autorizacion
 
