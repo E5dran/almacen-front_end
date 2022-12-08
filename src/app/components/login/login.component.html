@@ -1,0 +1,26 @@
+<h2>Bienvenido</h2>
+
+
+<div class="container col-5 bg-danger mt-5">
+    <form class="row justify-content-center" [formGroup]="formularioLogin" (ngSubmit)="onSubmit()">
+        <div>
+            <label class="col-4 mt-5 form-label">DNI</label>
+            <input type="text" formControlName="dni">
+
+        </div>
+
+        <div>
+            <label class="col-4 mt-5 form-label">Password</label>
+            <input type="text" formControlName="password">
+        </div>
+
+        <div>
+            <input type="submit" value="Login" class="btn btn-primary mt-5">
+        </div>
+        <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+                Contraseña
+            </span>
+        </div>
+    </form>
+</div>
