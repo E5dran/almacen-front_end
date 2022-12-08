@@ -1,0 +1,53 @@
+#toggler {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+#toggler span {
+    display: block;
+    height: 3px;
+    width: 20px;
+    background-color: #333;
+    margin-bottom: 5px;
+}
+
+#sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    background-color: rgb(6, 78, 75);
+    color: white;
+}
+
+#sidebar h4 {
+    text-align: center;
+}
+
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar ul li {
+    margin-top: 50px;
+    transition: .7s;
+}
+
+#sidebar ul li:hover {
+    padding-left: 20px;
+    background-color: rgb(5, 177, 177);
+}
+
+
+/* #button {
+    background-color: rgb(5, 177, 177);
+} */
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 0;
+    }
+
+}
