@@ -10,13 +10,14 @@ export class NavEncargadoComponent implements OnInit {
   sidebarWidth: string;
   activo: boolean;
   inactivo: boolean;
+  nombreEncargado: string
 
 
   constructor() {
     this.sidebarWidth = '0px';
     this.activo = false;
     this.inactivo = true;
-
+    this.nombreEncargado = ''
   }
 
   ngOnInit(): void {
@@ -28,7 +29,6 @@ export class NavEncargadoComponent implements OnInit {
     }
 
   }
-
 
   toggleSidebar() {
     if (this.sidebarWidth === '0px') {

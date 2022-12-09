@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavEncargadoComponent } from './components/nav-encargado/nav-encargado.component';
+import { NavEncargadoComponent } from './components/encargado/nav-encargado/nav-encargado.component';
 
 @NgModule({
   declarations: [

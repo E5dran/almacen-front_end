@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #sidebar {
     display: flex;
     flex-direction: column;
@@ -20,8 +26,9 @@
     display: block;
     height: 3px;
     width: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
+
 
 .activo {
     background-color: rgb(5, 177, 177);
@@ -73,14 +80,6 @@
     }
 
     #toggler {
-        display: block;
-    }
-
-    .activo {
-        display: none;
-    }
-
-    .inactivo {
         display: block;
     }
 }
