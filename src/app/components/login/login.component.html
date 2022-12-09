@@ -2,12 +2,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
-
-
 <body>
-    <div class="container mt-5 ">
+    <div class="container mt-5 row justify-content-center">
         <h1 class="text-center m-3 animate__animated animate__fadeInDown ">{{saludo}}, bienvenido!</h1>
-        <form [formGroup]="formularioLogin" (ngSubmit)="onSubmit()">
+        <form [formGroup]="formularioLogin" (ngSubmit)="onSubmit()" class="col-4 ">
             <div class="form-group m-3">
                 <label for="dniInput">DNI</label>
                 <input type="text" class="form-control" id="dniInput" formControlName="dni"
