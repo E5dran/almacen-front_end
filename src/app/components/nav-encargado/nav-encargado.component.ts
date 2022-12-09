@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavEncargadoComponent implements OnInit {
   sidebarWidth: string;
+  activo: boolean;
+  inactivo: boolean;
+
 
   constructor() {
-    this.sidebarWidth = '0px'
+    this.sidebarWidth = '0px';
+    this.activo = false;
+    this.inactivo = true;
 
   }
 
@@ -31,6 +36,8 @@ export class NavEncargadoComponent implements OnInit {
     } else {
       this.sidebarWidth = '0px';
     }
+    this.activo = !this.activo
+    this.inactivo = !this.inactivo
   }
 }
 

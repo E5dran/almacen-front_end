@@ -1,24 +1,24 @@
-<nav id="sidebar" [ngStyle]="{ width: sidebarWidth }">
+<nav id="sidebar" [ngStyle]="{ width: sidebarWidth, transition: '0.6s' }">
 
     <button id="toggler" (click)="toggleSidebar()">
-        <span>
+        <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
         </span>
-        <span>
+        <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
         </span>
-        <span>
+        <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
         </span>
     </button>
 
     <h4>Menú</h4>
 
-    <ul>
-        <li>Pedidos hoy</li>
-        <li>Entrada</li>
-        <li>Salida</li>
-        <li>Supervisados</li>
-    </ul>
+    <div id="links">
+        <a>Pedidos hoy</a>
+        <a>Entrada</a>
+        <a>Salida</a>
+        <a>Supervisados</a>
+    </div>
 
 
 
-    <button class="btn btn-danger" id="button">Logout</button>
+    <button class=" btn btn-danger" id="button">Logout</button>
 </nav>
