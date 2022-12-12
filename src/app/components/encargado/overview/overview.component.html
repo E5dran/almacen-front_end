@@ -1,10 +1,10 @@
 <div class="nombre">
     <h2>{{nombre}}, {{apellido}}</h2>
 </div>
+<div class="fecha">
+    <h5>{{fecha | date: 'fullDate'}}</h5>
+</div>
 <table class="table">
-    <th>
-        Fecha: {{fecha | date:'dd/MM/yyyy'}}
-    </th>
     <tr>
         <th>id</th>
         <th>categoria</th>

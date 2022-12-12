@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,6 +7,12 @@ import { AppComponent } from './app.component';
 import { NavEncargadoComponent } from './components/encargado/nav-encargado/nav-encargado.component';
 import { OverviewComponent } from './components/encargado/overview/overview.component';
 import { LoginComponent } from './components/login/login.component';
+
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeEs, 'es');
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +27,7 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

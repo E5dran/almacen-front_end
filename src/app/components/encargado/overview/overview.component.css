@@ -6,14 +6,21 @@
     width: 70%;
     height: 50%;
     border-collapse: separate;
-    border-spacing: 50px 0px;
-    overflow: scroll;
+    border-spacing: 20px 0px;
+    float: top;
 
 }
 
 h2 {
     color: white;
     position: absolute;
-    top: 80px;
-    left: 500px;
+    top: 40px;
+    left: 630px;
+}
+
+.fecha {
+    color: white;
+    position: absolute;
+    top: 115px;
+    left: 880px;
 }
