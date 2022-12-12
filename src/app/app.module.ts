@@ -13,6 +13,7 @@ import { registerLocaleData } from '@angular/common';
 import { JefeoverviewComponent } from './components/jefe/overview/jefeoverview.component';
 import { NewUserComponent } from './components/jefe/new-user/new-user.component';
 import { OperarioOverviewComponent } from './components/operario/operario-overview/operario-overview.component';
+import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 registerLocaleData(localeEs, 'es');
 
 
@@ -25,7 +26,8 @@ registerLocaleData(localeEs, 'es');
     LoginComponent,
     JefeoverviewComponent,
     NewUserComponent,
-    OperarioOverviewComponent
+    OperarioOverviewComponent,
+    CreateOrderComponent
   ],
   imports: [
     BrowserModule,

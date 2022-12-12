@@ -5,11 +5,13 @@ import { OverviewComponent } from './components/encargado/overview/overview.comp
 
 import { JefeoverviewComponent } from './components/jefe/overview/jefeoverview.component';
 import { OperarioOverviewComponent } from './components/operario/operario-overview/operario-overview.component';
+import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
   { path: 'login', component: LoginComponent },
   { path: 'jefeoverview', component: JefeoverviewComponent },
-  { path: 'operario/overview', component: OperarioOverviewComponent }
+  { path: 'operario/overview', component: OperarioOverviewComponent },
+  { path: 'operario/pedido/new', component: CreateOrderComponent }
 
 
 ];
