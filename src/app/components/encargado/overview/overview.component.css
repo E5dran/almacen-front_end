@@ -6,8 +6,9 @@
     width: 70%;
     height: 50%;
     border-collapse: separate;
-    border-spacing: 20px 0px;
+    border-spacing: 50px 50px;
     float: top;
+    overflow: scroll;
 
 }
 

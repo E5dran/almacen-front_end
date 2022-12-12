@@ -1,12 +1,13 @@
-<nav id="sidebar" [ngStyle]="{ width: sidebarWidth, transition: '0.4s'  , lineHeight: '0'}">
-    <div id="toggler" (click)="toggleSidebar()">
-        <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
-        </span>
-        <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
-        </span>
-        <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
-        </span>
-    </div>
+<div id="toggler" (click)="toggleSidebar()">
+    <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
+    </span>
+    <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
+    </span>
+    <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
+    </span>
+</div>
+<nav id="sidebar" [ngStyle]="{ width: sidebarWidth, transition: '0.4s'  , lineHeight: '0', overflow: 'hidden'}">
+
     <h4 id="titulo">{{nombreEncargado}}</h4>
     <div id="links">
         <a (click)="redireccionar('/encargado/overview')">Pedidos hoy</a>

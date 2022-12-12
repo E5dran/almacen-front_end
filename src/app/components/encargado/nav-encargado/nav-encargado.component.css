@@ -35,7 +35,7 @@
 
 
 .activo {
-    background-color: rgb(6, 78, 75);
+    background-color: rgb(235, 235, 235);
     cursor: pointer;
 }
 
@@ -87,7 +87,7 @@
     border-radius: 15px;
     padding: 5%;
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     margin-left: 10px;
 }
 
