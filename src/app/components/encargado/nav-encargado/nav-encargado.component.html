@@ -1,14 +1,14 @@
-<nav id="sidebar" [ngStyle]="{ width: sidebarWidth, transition: '0.6s' }">
-    <button id="toggler" (click)="toggleSidebar()">
+<nav id="sidebar" [ngStyle]="{ width: sidebarWidth, transition: '0.4s'  , lineHeight: '0'}">
+    <div id="toggler" (click)="toggleSidebar()">
         <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
         </span>
         <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
         </span>
         <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }">
         </span>
-    </button>
+    </div>
 
-    <h4>Portal De Encargado</h4>
+    <h4 id="titulo">Portal Encargado</h4>
 
     <div id="links">
         <a>Pedidos hoy</a>

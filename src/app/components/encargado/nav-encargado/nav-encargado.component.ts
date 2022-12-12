@@ -39,6 +39,7 @@ export class NavEncargadoComponent implements OnInit {
     this.activo = !this.activo
     this.inactivo = !this.inactivo
   }
+
 }
 
 
