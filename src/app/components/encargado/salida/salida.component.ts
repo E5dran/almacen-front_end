@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalidaComponent implements OnInit {
 
-  constructor() { }
+  nombre: string
+  apellido: string
+  fecha: Date
+  constructor() {
+
+    this.nombre = 'Juan'
+    this.apellido = 'Perez'
+    this.fecha = new Date()
+
+  }
 
   ngOnInit(): void {
   }
