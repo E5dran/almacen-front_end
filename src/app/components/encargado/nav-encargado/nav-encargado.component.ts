@@ -28,9 +28,7 @@ export class NavEncargadoComponent implements OnInit {
     } else {
       this.sidebarWidth = '200px';
     }
-
   }
-
   toggleSidebar() {
     if (this.sidebarWidth === '0px') {
       this.sidebarWidth = '200px';
