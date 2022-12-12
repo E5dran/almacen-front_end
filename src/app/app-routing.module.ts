@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
   { path: 'login', component: LoginComponent },
   { path: 'encargado/salida', component: SalidaComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'jefeoverview', component: JefeoverviewComponent },
 
 ];
