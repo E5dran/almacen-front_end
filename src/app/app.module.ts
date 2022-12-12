@@ -12,6 +12,7 @@ import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 import { JefeoverviewComponent } from './components/jefe/overview/jefeoverview.component';
 import { NewUserComponent } from './components/jefe/new-user/new-user.component';
+import { NavJefeComponent } from './components/nav/nav-jefe/nav-jefe.component';
 registerLocaleData(localeEs, 'es');
 
 
@@ -23,7 +24,8 @@ registerLocaleData(localeEs, 'es');
     OverviewComponent,
     LoginComponent,
     JefeoverviewComponent,
-    NewUserComponent
+    NewUserComponent,
+    NavJefeComponent
   ],
   imports: [
     BrowserModule,
