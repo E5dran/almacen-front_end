@@ -15,6 +15,7 @@ import { NewUserComponent } from './components/jefe/new-user/new-user.component'
 import { SalidaComponent } from './components/encargado/salida/salida.component';
 import { JefeoverviewComponent } from './components/jefe/overview/jefeoverview.component';
 import { EntradaComponent } from './components/encargado/entrada/entrada.component';
+import { SupervisadosComponent } from './components/encargado/supervisados/supervisados.component';
 registerLocaleData(localeEs, 'es');
 
 
@@ -29,7 +30,8 @@ registerLocaleData(localeEs, 'es');
     LoginComponent,
     JefeoverviewComponent,
     NewUserComponent,
-    EntradaComponent
+    EntradaComponent,
+    SupervisadosComponent
   ],
   imports: [
     BrowserModule,
