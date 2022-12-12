@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="table">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Warehouse Id</th>
+                <th>Status</th>
+                <th>Addressee</th>
+                <th>Description</th>
+                <th>Nª Items</th>
+                <th>Destination Address</th>
+                <th>Creation Date</th>
+                <th>Departure Date</th>
+                <th>Arrival Date</th>
+                <th>Truck Plate</th>
+                <th>Category</th>
+            </tr>
+            <tr *ngFor="let order of arrOrders">
+                <td>{{order.Id}}</td>
+                <td>{{order.Warehouse_Id}}</td>
+                <td>{{order.Status}}</td>
+                <td>{{order.Addressee}}</td>
+                <td>{{order.Description}}</td>
+                <td>{{order.N_Items}}</td>
+                <td>{{order.Destination_Address}}</td>
+                <td>{{order.Creation_Date | date: 'shortDate'}}</td>
+                <td>{{order.Departure_Date | date: 'shortDate'}}</td>
+                <td>{{order.Arrival_Date | date: 'shortDate'}}</td>
+                <td>{{order.Truck_Plate}}</td>
+                <td>{{order.Category}}</td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
