@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,11 +14,11 @@ export class NavEncargadoComponent implements OnInit {
   nombreEncargado: string
 
 
-  constructor() {
+  constructor(private router: Router) {
     this.sidebarWidth = '0px';
     this.activo = false;
     this.inactivo = true;
-    this.nombreEncargado = ''
+    this.nombreEncargado = 'Oscar'
   }
 
   ngOnInit(): void {
@@ -40,9 +41,12 @@ export class NavEncargadoComponent implements OnInit {
     this.inactivo = !this.inactivo
   }
 
+  redireccionar(pLink: any) {
+    this.router.navigate([pLink])
+    console.log(pLink)
+  }
+
 }
-
-
 
 
 

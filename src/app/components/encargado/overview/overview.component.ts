@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.css']
 })
 export class OverviewComponent implements OnInit {
-
-  constructor() { }
+  nombre: string
+  apellido: string
+  fecha: Date
+  constructor() {
+    this.nombre = 'Juan'
+    this.apellido = 'Perez'
+    this.fecha = new Date()
+  }
 
   ngOnInit(): void {
+
+
   }
 
 }

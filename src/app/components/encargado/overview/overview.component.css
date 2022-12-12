@@ -1,8 +1,19 @@
-table {
+.table {
+    position: absolute;
+    top: 150px;
+    left: 280px;
+    background-color: white;
+    width: 70%;
+    height: 50%;
     border-collapse: separate;
     border-spacing: 50px 0px;
+    overflow: scroll;
+
 }
 
-table tr {
-    height: 50px;
+h2 {
+    color: white;
+    position: absolute;
+    top: 80px;
+    left: 500px;
 }
