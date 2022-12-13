@@ -7,24 +7,24 @@
     height: 50%;
     float: top;
     overflow: scroll;
+    border: 1px solid black;
 
 }
 
 .table table {
-    border-collapse: separate;
-    border-spacing: 50px 50px;
+    width: 100%;
 }
 
 
 h2 {
-    color: white;
+    color: rgb(6, 78, 75);
     position: absolute;
     top: 40px;
     left: 630px;
 }
 
 .fecha {
-    color: white;
+    color: rgb(6, 78, 75);
     position: absolute;
     top: 115px;
     left: 880px;
