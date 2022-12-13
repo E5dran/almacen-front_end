@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'encargado/salida', component: SalidaComponent },
   { path: 'encargado/entrada', component: EntradaComponent },
+  { path: 'encargado/supervisados', component: EntradaComponent },
   { path: 'jefeoverview', component: JefeoverviewComponent },
-
 ];
 
 @NgModule({

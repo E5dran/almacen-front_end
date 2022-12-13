@@ -1,0 +1,31 @@
+.table {
+    position: absolute;
+    top: 150px;
+    left: 280px;
+    background-color: white;
+    width: 70%;
+    height: 50%;
+    float: top;
+    overflow: scroll;
+
+}
+
+.table table {
+    border-collapse: separate;
+    border-spacing: 50px 50px;
+}
+
+
+h2 {
+    color: white;
+    position: absolute;
+    top: 40px;
+    left: 630px;
+}
+
+.fecha {
+    color: white;
+    position: absolute;
+    top: 115px;
+    left: 880px;
+}
