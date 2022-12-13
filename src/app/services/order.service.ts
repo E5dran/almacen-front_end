@@ -15,8 +15,7 @@ export class OrderService {
   }
   getAll(): Promise<Order[]> {
     return firstValueFrom(
-      this.httpClient.get<Order[]>(this.urlBase
-      )
+      this.httpClient.get<Order[]>(this.urlBase)
     );
   }
   getById(pId: number): Promise<Order[]> {
