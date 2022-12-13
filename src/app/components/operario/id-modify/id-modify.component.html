@@ -1,8 +1,8 @@
 <nav-operario></nav-operario>
 <div class="container">
-    <h2>NEW ORDER</h2>
+    <h2>MODIFY ID</h2>
     <div class="col-auto">
-        <form [formGroup]="createOrder" class="row y justify-content-center ">
+        <form [formGroup]="modifyOrder" class="row y justify-content-center ">
             <div class="col-7">
                 <label class="form-label">CLIENT</label>
                 <input type="text" class="form-control" formControlName="Client">
@@ -42,7 +42,7 @@
                 </select>
             </div>
             <div class="col-6">
-                <button type="submit">CREATE</button>
+                <button type="submit">MODIFY</button>
             </div>
         </form>
     </div>

@@ -9,6 +9,7 @@ import { NewUserComponent } from './components/jefe/new-user/new-user.component'
 import { OperarioOverviewComponent } from './components/operario/operario-overview/operario-overview.component';
 import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 import { OrderModifyComponent } from './components/operario/order-modify/order-modify.component';
+import { IdModifyComponent } from './components/operario/id-modify/id-modify.component';
 const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
   { path: 'login', component: LoginComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'encargado/supervisados', component: EntradaComponent },
   { path: 'operario/overview', component: OperarioOverviewComponent },
   { path: 'operario/order/new', component: CreateOrderComponent },
-  { path: 'operario/order/modify', component: OrderModifyComponent }
+  { path: 'operario/order/modify', component: OrderModifyComponent },
+  { path: 'operario/order/modify/:Id', component: IdModifyComponent }
 ];
 
 @NgModule({
