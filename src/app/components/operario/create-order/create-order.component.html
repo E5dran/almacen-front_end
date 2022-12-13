@@ -2,40 +2,47 @@
     <h2>NEW ORDER</h2>
     <div class="col-auto">
         <form class="row y justify-content-center ">
-            <div class="col-6">
+            <div class="col-7">
                 <label class="form-label">CLIENT</label>
-                <input type="text" class="form-control" formControlName="client">
+                <input type="text" class="form-control" formControlName="Client">
             </div>
-            <div class="col-6">
+            <div class="col-7">
                 <label class="form-label">DESCRIPTION</label>
                 <input type="text" class="form-control" formControlName="Description">
             </div>
-            <div class="col-6">
+            <div class="col-7">
                 <label class="form-label">Nº ITEMS</label>
                 <input type="text" class="form-control" formControlName="N_Items">
 
             </div>
-            <div class="col-6">
-                <label class="form-label">DESTINATION ADDRESS</label>
-                <input type="date" class="form-control" formControlName="Destination_Address">
-            </div>
-            <div class="col-6">
-                <label class="form-label">TRUCK PLATE</label>
-                <input type="text" class="form-control" formControlName="Truck_Plate">
-            </div>
-            <div class="col-6">
-                <label class="form-label">DEPARTURE DATE</label>
-                <input type="date" class="form-control" formControlName="Departure_Date">
-            </div>
-            <div class="col-6">
+            <div class="col-7">
                 <label class="form-label">DESTINATION ADDRESS</label>
                 <input type="text" class="form-control" formControlName="Destination_Address">
             </div>
-            <div class="col-6 pb-5">
+            <div class="col-7">
+                <label class="form-label">TRUCK PLATE</label>
+                <input type="text" class="form-control" formControlName="Truck_Plate">
+            </div>
+            <div class="col-7">
+                <label class="form-label">DEPARTURE DATE</label>
+                <input type="date" class="form-control" formControlName="Departure_Date">
+            </div>
+            <div class="col-7">
                 <label class="form-label">ARRIVAL DATE</label>
                 <input type="date" class="form-control" formControlName="Arrival_Date">
             </div>
-            <button class="btn btn-primary col-4" type="submit">CREATE</button>
+            <div class="col-7 pb-5">
+                <label for="from-label">CATEGORY</label>
+                <select class="form-select" aria-label="Default select example" formControlName="Category">
+                    <option selected>CATEGORY</option>
+                    <option value="entrance">ENTRANCE</option>
+                    <option value="eixit">EIXIT</option>
+                    <option value="stored">STORED</option>
+                </select>
+            </div>
+            <div class="button">
+                <button type="submit">CREATE</button>
+            </div>
         </form>
     </div>
 </div>
