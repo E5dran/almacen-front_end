@@ -1,0 +1,23 @@
+<nav-jefe></nav-jefe>
+<div class="container">
+    <h2>Warehouses</h2>
+    <form class="d-flex p-5" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
+        <button class="btn btn-outline-success" type="submit">SEARCH</button>
+    </form>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">DIRECCION</th>
+
+            </tr>
+        </thead>
+        <tbody class="table-group-divider" *ngFor="let warehouse of arrModwarehouse">
+            <tr [routerLink]="['/jefe','warehouse','modify',warehouse.id]">
+
+                <td>{{warehouse.id}}</td>
+                <td>{{warehouse.name}}</td>
+                <td>{{warehouse.address}}</td>
+            </tr>

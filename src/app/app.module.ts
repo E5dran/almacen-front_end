@@ -25,6 +25,7 @@ import { OperarioOverviewComponent } from './components/operario/operario-overvi
 import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 import { NewWarehouseComponent } from './components/jefe/new-warehouse/new-warehouse.component';
 import { ModifyUserComponent } from './components/jefe/modify-user/modify-user.component';
+import { ModifyWarehouseComponent } from './components/jefe/modify-warehouse/modify-warehouse.component';
 registerLocaleData(localeEs, 'es');
 
 
@@ -46,7 +47,8 @@ registerLocaleData(localeEs, 'es');
     OperarioOverviewComponent,
     CreateOrderComponent,
     NewWarehouseComponent,
-    ModifyUserComponent
+    ModifyUserComponent,
+    ModifyWarehouseComponent
   ],
   imports: [
     BrowserModule,
