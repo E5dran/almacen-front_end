@@ -13,7 +13,7 @@ export class UsuarioService {
   private urlBase: string;
 
   constructor(private httpClient: HttpClient) {
-    this.urlBase = 'http://localhost:3000/api/users';
+    this.urlBase = 'http://localhost:3000/api/users/';
 
   }
 
