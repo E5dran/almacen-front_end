@@ -12,6 +12,7 @@ import { NewWarehouseComponent } from './components/jefe/new-warehouse/new-wareh
 import { ModifyUserComponent } from './components/jefe/modify-user/modify-user.component';
 import { ModifyWarehouseComponent } from './components/jefe/modify-warehouse/modify-warehouse.component';
 import { UserModifyIdComponent } from './components/jefe/user-modify-id/user-modify-id.component';
+import { WarehouseModifyIdComponent } from './components/jefe/warehouse-modify-id/warehouse-modify-id.component';
 
 const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'jefe/warehouse/new', component: NewWarehouseComponent },
   { path: 'jefe/user/modify', component: ModifyUserComponent },
   { path: 'jefe/warehouse/modify', component: ModifyWarehouseComponent },
-  { path: 'jefe/user/modify/:id', component: UserModifyIdComponent }
+  { path: 'jefe/user/modify/:id', component: UserModifyIdComponent },
+  { path: 'jefe/warehouse/modify/:id', component: WarehouseModifyIdComponent }
 ];
 
 @NgModule({

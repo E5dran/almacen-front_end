@@ -27,6 +27,7 @@ import { NewWarehouseComponent } from './components/jefe/new-warehouse/new-wareh
 import { ModifyUserComponent } from './components/jefe/modify-user/modify-user.component';
 import { ModifyWarehouseComponent } from './components/jefe/modify-warehouse/modify-warehouse.component';
 import { UserModifyIdComponent } from './components/jefe/user-modify-id/user-modify-id.component';
+import { WarehouseModifyIdComponent } from './components/jefe/warehouse-modify-id/warehouse-modify-id.component';
 registerLocaleData(localeEs, 'es');
 
 
@@ -50,7 +51,8 @@ registerLocaleData(localeEs, 'es');
     NewWarehouseComponent,
     ModifyUserComponent,
     ModifyWarehouseComponent,
-    UserModifyIdComponent
+    UserModifyIdComponent,
+    WarehouseModifyIdComponent
   ],
   imports: [
     BrowserModule,
