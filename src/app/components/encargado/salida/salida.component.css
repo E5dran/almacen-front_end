@@ -7,25 +7,8 @@
     height: 50%;
     float: top;
     overflow: scroll;
-    border: 1px solid black;
-
 }
 
-.table table {
-    width: 100%;
-}
-
-
-h2 {
+.nombre.fecha {
     color: rgb(6, 78, 75);
-    position: absolute;
-    top: 40px;
-    left: 630px;
-}
-
-.fecha {
-    color: rgb(6, 78, 75);
-    position: absolute;
-    top: 115px;
-    left: 880px;
 }
