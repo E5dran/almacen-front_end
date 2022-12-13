@@ -14,8 +14,8 @@ export class JefeoverviewComponent implements OnInit {
   constructor() {
     this.arrDatos = [{
 
-      nombre: 'center',
-      direccion: 'c/Alava 14'
+      name: 'center',
+      address: 'c/Alava 14'
 
     }];
 
