@@ -1,0 +1,33 @@
+<nav-operario></nav-operario>
+<div class="container">
+    <h2>ORDERS</h2>
+    <form class="d-flex p-5" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
+        <button class="btn btn-outline-success" type="submit">SEARCH</button>
+    </form>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">CLIENT</th>
+                <th scope="col">DESCRIPTION</th>
+                <th scope="col">DESTINATION ADDRESS</th>
+                <th scope="col">DEPARTURE DATE</th>
+                <th scope="col">TRUCK PLATE</th>
+                <th scope="col">CATEGORY</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider" *ngFor="let order of arrModOrder">
+            <tr [routerLink]="['/operario','order','modify', order.Id]">
+                <td>{{order.Id}}</td>
+                <!-- <td>{{order.Client}}</td> -->
+                <td>{{order.Description}}</td>
+                <td>{{order.Destination_Address}}</td>
+                <td>{{order.Departure_Date}}</td>
+                <td>{{order.Truck_Plate}}</td>
+                <td>{{order.Category}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

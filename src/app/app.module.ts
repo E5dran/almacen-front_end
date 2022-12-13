@@ -23,6 +23,7 @@ import { SupervisadosComponent } from './components/encargado/supervisados/super
 
 import { OperarioOverviewComponent } from './components/operario/operario-overview/operario-overview.component';
 import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
+import { OrderModifyComponent } from './components/operario/order-modify/order-modify.component';
 registerLocaleData(localeEs, 'es');
 
 
@@ -42,7 +43,8 @@ registerLocaleData(localeEs, 'es');
     EntradaComponent,
     SupervisadosComponent,
     OperarioOverviewComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    OrderModifyComponent
   ],
   imports: [
     BrowserModule,

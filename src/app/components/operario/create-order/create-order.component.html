@@ -1,7 +1,7 @@
 <div class="container">
     <h2>NEW ORDER</h2>
     <div class="col-auto">
-        <form class="row y justify-content-center ">
+        <form [formGroup]="createOrder" class="row y justify-content-center ">
             <div class="col-7">
                 <label class="form-label">CLIENT</label>
                 <input type="text" class="form-control" formControlName="Client">
