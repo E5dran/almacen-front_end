@@ -21,6 +21,8 @@ import { JefeoverviewComponent } from './components/jefe/overview/jefeoverview.c
 import { EntradaComponent } from './components/encargado/entrada/entrada.component';
 import { SupervisadosComponent } from './components/encargado/supervisados/supervisados.component';
 
+import { OperarioOverviewComponent } from './components/operario/operario-overview/operario-overview.component';
+import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 registerLocaleData(localeEs, 'es');
 
 
@@ -38,7 +40,9 @@ registerLocaleData(localeEs, 'es');
     NavEncargadoComponent,
     NavOperarioComponent,
     EntradaComponent,
-    SupervisadosComponent
+    SupervisadosComponent,
+    OperarioOverviewComponent,
+    CreateOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.table {
+    background-color: white;
+}

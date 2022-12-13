@@ -6,6 +6,8 @@ import { SalidaComponent } from './components/encargado/salida/salida.component'
 import { JefeoverviewComponent } from './components/jefe/overview/jefeoverview.component';
 import { EntradaComponent } from './components/encargado/entrada/entrada.component';
 import { NewUserComponent } from './components/jefe/new-user/new-user.component';
+import { OperarioOverviewComponent } from './components/operario/operario-overview/operario-overview.component';
+import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
   { path: 'login', component: LoginComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'encargado/salida', component: SalidaComponent },
   { path: 'encargado/entrada', component: EntradaComponent },
   { path: 'encargado/supervisados', component: EntradaComponent },
+  { path: 'operario/overview', component: OperarioOverviewComponent },
+  { path: 'operario/order/new', component: CreateOrderComponent }
 ];
 
 @NgModule({
