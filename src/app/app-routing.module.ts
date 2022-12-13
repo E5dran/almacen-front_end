@@ -10,6 +10,12 @@ import { OperarioOverviewComponent } from './components/operario/operario-overvi
 import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 import { OrderModifyComponent } from './components/operario/order-modify/order-modify.component';
 import { IdModifyComponent } from './components/operario/id-modify/id-modify.component';
+import { NewWarehouseComponent } from './components/jefe/new-warehouse/new-warehouse.component';
+import { ModifyUserComponent } from './components/jefe/modify-user/modify-user.component';
+import { ModifyWarehouseComponent } from './components/jefe/modify-warehouse/modify-warehouse.component';
+import { UserModifyIdComponent } from './components/jefe/user-modify-id/user-modify-id.component';
+import { WarehouseModifyIdComponent } from './components/jefe/warehouse-modify-id/warehouse-modify-id.component';
+
 const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
   { path: 'login', component: LoginComponent },
@@ -21,7 +27,12 @@ const routes: Routes = [
   { path: 'operario/overview', component: OperarioOverviewComponent },
   { path: 'operario/order/new', component: CreateOrderComponent },
   { path: 'operario/order/modify', component: OrderModifyComponent },
-  { path: 'operario/order/modify/:Id', component: IdModifyComponent }
+  { path: 'operario/order/modify/:Id', component: IdModifyComponent },
+  { path: 'jefe/warehouse/new', component: NewWarehouseComponent },
+  { path: 'jefe/user/modify', component: ModifyUserComponent },
+  { path: 'jefe/warehouse/modify', component: ModifyWarehouseComponent },
+  { path: 'jefe/user/modify/:id', component: UserModifyIdComponent },
+  { path: 'jefe/warehouse/modify/:id', component: WarehouseModifyIdComponent }
 ];
 
 @NgModule({

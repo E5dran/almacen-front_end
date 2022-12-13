@@ -1,0 +1,26 @@
+<nav-jefe></nav-jefe>
+<div class="container">
+    <h2>Crear usuario</h2>
+
+
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Direccion</label>
+            <input type="direccion" class="form-control" formControlName="direccion">
+
+
+
+
+        </div>
+        <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-info" [ngClass]="{
+            'btn-danger': !formulario.valid
+        }">
+    </form>
+</div>
