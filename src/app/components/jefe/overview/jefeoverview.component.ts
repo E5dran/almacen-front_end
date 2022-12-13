@@ -13,7 +13,7 @@ export class JefeoverviewComponent implements OnInit {
 
   constructor() {
     this.arrDatos = [{
-
+      id: 1,
       name: 'center',
       address: 'c/Alava 14'
 
