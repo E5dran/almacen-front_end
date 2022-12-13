@@ -1,4 +1,4 @@
 export interface Warehouse {
-    nombre: string;
-    direccion: string;
+    name: string;
+    address: string;
 }
