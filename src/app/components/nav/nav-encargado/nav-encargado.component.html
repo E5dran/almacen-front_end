@@ -1,0 +1,18 @@
+<div id="toggler" [ngStyle]="{ width: sidebarWidth, backgroundColor: backgroundColor, transition: '0.4s'}" (click)="toggleSidebar()">
+    <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }" [ngStyle]="{backgroundColor: color}">
+    </span>
+    <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }" [ngStyle]="{backgroundColor: color}">
+    </span>
+    <span [ngClass]="{ 'activo' : activo, 'inactivo' : inactivo }" [ngStyle]="{backgroundColor: color}">
+    </span>
+</div>
+<nav id="sidebar" [ngStyle]="{ width: sidebarWidth, backgroundColor: backgroundColor, transition: '0.4s'  , lineHeight: '0', overflow: 'hidden'}">
+    <h4 id="titulo">{{nombreEncargado}}</h4>
+    <ul id="links">
+        <li [routerLink]="['/encargado','overview']">Pedidos hoy</li>
+        <li [routerLink]="['/encargado','warehouse','entrada']">Entrada</li>
+        <li [routerLink]="['/encargado','warehouse','salida']">Salida</li>
+        <li [routerLink]="['/encargado','warehouse','supervisados']">Supervisados</li>
+    </ul>
+    <button class=" btn btn-danger" id="button">Logout</button>
+</nav>
