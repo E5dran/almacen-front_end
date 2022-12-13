@@ -9,6 +9,7 @@ import { NewUserComponent } from './components/jefe/new-user/new-user.component'
 import { OperarioOverviewComponent } from './components/operario/operario-overview/operario-overview.component';
 import { CreateOrderComponent } from './components/operario/create-order/create-order.component';
 import { NewWarehouseComponent } from './components/jefe/new-warehouse/new-warehouse.component';
+import { ModifyUserComponent } from './components/jefe/modify-user/modify-user.component';
 
 const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'encargado/supervisados', component: EntradaComponent },
   { path: 'operario/overview', component: OperarioOverviewComponent },
   { path: 'operario/order/new', component: CreateOrderComponent },
-  { path: 'jefe/warehouse/new', component: NewWarehouseComponent }
+  { path: 'jefe/warehouse/new', component: NewWarehouseComponent },
+  { path: 'jefe/user/modify', component: ModifyUserComponent }
 ];
 
 @NgModule({
