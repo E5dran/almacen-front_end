@@ -16,6 +16,7 @@ import { ModifyWarehouseComponent } from './components/jefe/modify-warehouse/mod
 import { UserModifyIdComponent } from './components/jefe/user-modify-id/user-modify-id.component';
 import { WarehouseModifyIdComponent } from './components/jefe/warehouse-modify-id/warehouse-modify-id.component';
 
+import { SupervisadosComponent } from './components/encargado/supervisados/supervisados.component';
 const routes: Routes = [
   { path: 'encargado/overview', component: OverviewComponent },
   { path: 'login', component: LoginComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'jefe/user/new', component: NewUserComponent },
   { path: 'encargado/salida', component: SalidaComponent },
   { path: 'encargado/entrada', component: EntradaComponent },
-  { path: 'encargado/supervisados', component: EntradaComponent },
+  { path: 'encargado/supervisados', component: SupervisadosComponent },
   { path: 'operario/overview', component: OperarioOverviewComponent },
   { path: 'operario/order/new', component: CreateOrderComponent },
   { path: 'operario/order/modify', component: OrderModifyComponent },
