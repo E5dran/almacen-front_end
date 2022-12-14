@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-user-modify-id',
@@ -9,7 +10,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class UserModifyIdComponent implements OnInit {
 
   formulario: FormGroup;
-  constructor() {
+
+  constructor(private userService: UsuarioService) {
     this.formulario = new FormGroup({
       dni: new FormControl(),
       name: new FormControl(),
@@ -22,8 +24,10 @@ export class UserModifyIdComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit() {
-    console.log(this.formulario.value);
 
+
+  async onSubmit() {
+    await this.userService.modify(this.formulario.value);
   }
+  //falta delete//
 }

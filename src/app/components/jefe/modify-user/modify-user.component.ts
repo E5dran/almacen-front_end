@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/interfaces/user.interface';
+import { UsuarioService } from 'src/app/services/usuario.service';
+
 
 @Component({
   selector: 'app-modify-user',
@@ -11,11 +13,12 @@ export class ModifyUserComponent implements OnInit {
   arrModUser: User[];
 
 
-  constructor() {
+  constructor(private userService: UsuarioService) {
     this.arrModUser = [];
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.arrModUser = await this.userService.getAll()
   }
 
 }

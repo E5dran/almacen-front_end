@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Warehouse } from 'src/app/interfaces/warehouse.interface';
+import { WarehouseService } from 'src/app/services/warehouse.service';
 
 @Component({
   selector: 'app-modify-warehouse',
@@ -10,11 +11,14 @@ export class ModifyWarehouseComponent implements OnInit {
 
   arrModwarehouse: Warehouse[];
 
-  constructor() {
+
+  constructor(private warehouseService: WarehouseService) {
     this.arrModwarehouse = [];
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.arrModwarehouse = await this.warehouseService.getAll()
+    console.log(this.arrModwarehouse)
   }
 
 }

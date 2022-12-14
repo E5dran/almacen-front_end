@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { WarehouseService } from 'src/app/services/warehouse.service';
 
 @Component({
   selector: 'app-warehouse-modify-id',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class WarehouseModifyIdComponent implements OnInit {
   formulario: FormGroup;
 
-  constructor() {
+  constructor(private warehouseService: WarehouseService) {
 
 
     this.formulario = new FormGroup({
@@ -22,9 +23,12 @@ export class WarehouseModifyIdComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  onSubmit() {
-    console.log(this.formulario.value);
+  onSubmit() { };
+  // async onSubmit() {
+  //  await this.warehouseService.modify(this.formulario.value, String );
 
-  };
-}
+  //falta delete
+
+};
+//}
 
