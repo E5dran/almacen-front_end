@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { pipe } from 'rxjs';
 import { debounceTime } from 'rxjs';
+import { User } from 'src/app/interfaces/user.interface';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
     selector: 'new-user',
@@ -11,14 +13,21 @@ import { debounceTime } from 'rxjs';
 export class NewUserComponent implements OnInit {
 
     formulario: FormGroup;
-    constructor() {
+
+    constructor(private userService: UsuarioService) {
         this.formulario = new FormGroup({
-            dni: new FormControl(),
             name: new FormControl(),
-            categoria: new FormControl(),
-            email: new FormControl()
+            surname: new FormControl(),
+            email: new FormControl(),
+            password: new FormControl(),
+            phone: new FormControl(),
+            adress: new FormControl(),
+            dni: new FormControl(),
+            gender: new FormControl(),
+            category: new FormControl(),
 
         })
+
     }
 
 
@@ -30,8 +39,8 @@ export class NewUserComponent implements OnInit {
 
 
 
-    onSubmit() {
-        console.log(this.formulario.value)
+    async onSubmit() {
+        await this.userService.register(this.formulario.value);
 
     }
 
