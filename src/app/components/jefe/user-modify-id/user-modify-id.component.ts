@@ -13,10 +13,15 @@ export class UserModifyIdComponent implements OnInit {
 
   constructor(private userService: UsuarioService) {
     this.formulario = new FormGroup({
-      dni: new FormControl(),
       name: new FormControl(),
-      categoria: new FormControl(),
-      email: new FormControl()
+      surname: new FormControl(),
+      email: new FormControl(),
+      password: new FormControl(),
+      phone: new FormControl(),
+      adress: new FormControl(),
+      dni: new FormControl(),
+      gender: new FormControl(),
+      category: new FormControl(),
 
     })
   }
@@ -27,7 +32,14 @@ export class UserModifyIdComponent implements OnInit {
 
 
   async onSubmit() {
-    await this.userService.modify(this.formulario.value);
+    await this.userService.getAll();
+    const response = await this.userService.delete(this.formulario.value);
+
+
   }
-  //falta delete//
+  async deleteClick(id: Number) {
+    const response = await this.userService.delete(id);
+    console.log(response);
+  }
+
 }

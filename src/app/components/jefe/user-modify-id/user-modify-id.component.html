@@ -3,30 +3,56 @@
     <h2>User Modify</h2>
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="mb-3">
-            <label class="form-label">DNI</label>
-            <input type="text" class="form-control" formControlName="dni">
-        </div>
-
-        <div class="mb-3">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" formControlName="name">
 
         </div>
-
+        <div class="mb-3">
+            <label class="form-label">surname</label>
+            <input type="text" class="form-control" formControlName="surname">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">password</label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" formControlName="phone">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Adress</label>
+            <input type="text" class="form-control" formControlName="adress">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">DNI</label>
+            <input type="text" class="form-control" formControlName="dni">
+        </div>
         <div class="mb-3">
 
+            <label class="form-label">gender</label>
+            <select class="form-select" formControlName="gender">
+                <option selected hidden></option>
+
+                <option value="m">hombre</option>
+                <option value="f">mujer</option>
+                <option value="other">other</option>
+                <option value="n/d">no quiero contestar</option>
+            </select>
+        </div>
+        <div class="mb-3">
             <label class="form-label">Categoría</label>
-            <select class="form-select" formControlName="categoria">
+            <select class="form-select" formControlName="category">
                 <option selected hidden></option>
 
                 <option value="operario">operario</option>
                 <option value="encargado">encargado</option>
             </select>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" formControlName="email">
-        </div>
+
         <div>
             <button class="btn btn-danger m-3">Delete</button>
 

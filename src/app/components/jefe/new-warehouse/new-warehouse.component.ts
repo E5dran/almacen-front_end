@@ -14,24 +14,18 @@ export class NewWarehouseComponent implements OnInit {
   constructor(private warehouseService: WarehouseService) {
     this.formulario = new FormGroup({
       name: new FormControl(),
-      direccion: new FormControl()
+      address: new FormControl()
 
     })
   }
-
-
   ngOnInit(): void {
-
-
   }
-
-
-
 
   async onSubmit() {
     await this.warehouseService.register(this.formulario.value)
-
-
   }
 
 }
+
+
+
