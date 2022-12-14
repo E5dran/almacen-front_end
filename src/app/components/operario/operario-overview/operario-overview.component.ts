@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/interfaces/order.interface';
 import { DatePipe } from '@angular/common';
+import { OrderService } from 'src/app/services/order.service';
 
 
 @Component({
@@ -11,11 +12,14 @@ import { DatePipe } from '@angular/common';
 export class OperarioOverviewComponent implements OnInit {
 
   arrOrders: Order[];
-  constructor() {
+  constructor(
+    private orderService: OrderService
+  ) {
     this.arrOrders = []
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.arrOrders = await this.orderService.getAll();
   }
 
 }
