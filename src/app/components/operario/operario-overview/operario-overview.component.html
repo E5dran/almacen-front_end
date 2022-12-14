@@ -16,18 +16,18 @@
                 <th>Category</th>
             </tr>
             <tr *ngFor="let order of arrOrders">
-                <td>{{order.Id}}</td>
-                <td>{{order.Warehouse_Id}}</td>
-                <td>{{order.Status}}</td>
-                <td>{{order.Addressee}}</td>
-                <td>{{order.Description}}</td>
-                <td>{{order.N_Items}}</td>
-                <td>{{order.Destination_Address}}</td>
-                <td>{{order.Creation_Date | date: 'shortDate'}}</td>
-                <td>{{order.Departure_Date | date: 'shortDate'}}</td>
-                <td>{{order.Arrival_Date | date: 'shortDate'}}</td>
-                <td>{{order.Truck_Plate}}</td>
-                <td>{{order.Category}}</td>
+                <td>{{order.id}}</td>
+                <td>{{order.warehouse_id}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.addressee}}</td>
+                <td>{{order.description}}</td>
+                <td>{{order.n_items}}</td>
+                <td>{{order.destination_address}}</td>
+                <td>{{order.creation_date | date: 'shortDate'}}</td>
+                <td>{{order.departure_date | date: 'shortDate'}}</td>
+                <td>{{order.arrival_date | date: 'shortDate'}}</td>
+                <td>{{order.truck_plate}}</td>
+                <td>{{order.category}}</td>
             </tr>
 
         </table>

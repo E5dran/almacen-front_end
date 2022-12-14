@@ -21,12 +21,12 @@
             </tr>
         </thead>
         <tbody class="table-group-divider text-center" *ngFor="let order of orders">
-            <tr [routerLink]="['/operario','order','modify', order.Id]">
+            <tr [routerLink]="['/operario','order','modify', order.id]">
 
-                <td>{{order.Id}}</td>
-                <td>{{order.Category}}</td>
-                <td>{{order.Description}}</td>
-                <td>{{order.N_Items}}</td>
+                <td>{{order.id}}</td>
+                <td>{{order.category}}</td>
+                <td>{{order.description}}</td>
+                <td>{{order.n_items}}</td>
 
             </tr>
         </tbody>
