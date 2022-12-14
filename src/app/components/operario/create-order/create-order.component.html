@@ -2,47 +2,38 @@
 <div class="container">
     <h2>NEW ORDER</h2>
     <div class="col-auto">
-        <form [formGroup]="createOrder" class="row y justify-content-center ">
+        <form [formGroup]="createOrder" class="row y justify-content-center " (ngSubmit)="onSubmit()">
             <div class="col-7">
-                <label class="form-label">CLIENT</label>
-                <input type="text" class="form-control" formControlName="Client">
+                <label class="form-label">ADDRESSEE</label>
+                <input type="text" class="form-control" formControlName="addressee">
             </div>
             <div class="col-7">
                 <label class="form-label">DESCRIPTION</label>
-                <input type="text" class="form-control" formControlName="Description">
+                <input type="text" class="form-control" formControlName="description">
             </div>
             <div class="col-7">
                 <label class="form-label">Nº ITEMS</label>
-                <input type="text" class="form-control" formControlName="N_Items">
+                <input type="text" class="form-control" formControlName="n_items">
 
             </div>
             <div class="col-7">
                 <label class="form-label">DESTINATION ADDRESS</label>
-                <input type="text" class="form-control" formControlName="Destination_Address">
+                <input type="text" class="form-control" formControlName="destination_address">
             </div>
             <div class="col-7">
                 <label class="form-label">TRUCK PLATE</label>
-                <input type="text" class="form-control" formControlName="Truck_Plate">
+                <input type="text" class="form-control" formControlName="truck_plate">
             </div>
             <div class="col-7">
                 <label class="form-label">DEPARTURE DATE</label>
-                <input type="date" class="form-control" formControlName="Departure_Date">
+                <input type="date" class="form-control" formControlName="departure_date">
             </div>
             <div class="col-7">
                 <label class="form-label">ARRIVAL DATE</label>
-                <input type="date" class="form-control" formControlName="Arrival_Date">
-            </div>
-            <div class="col-7 pb-5">
-                <label for="from-label">CATEGORY</label>
-                <select class="form-select" aria-label="Default select example" formControlName="Category">
-                    <option selected>CATEGORY</option>
-                    <option value="entrance">ENTRANCE</option>
-                    <option value="eixit">EIXIT</option>
-                    <option value="stored">STORED</option>
-                </select>
+                <input type="date" class="form-control" formControlName="arrival_date">
             </div>
             <div class="col-6">
-                <button type="submit">CREATE</button>
+                <input type="submit" value="CREATE">
             </div>
         </form>
     </div>
