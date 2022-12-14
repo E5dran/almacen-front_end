@@ -38,4 +38,16 @@ export class OrderService {
       this.httpClient.delete<any>(this.urlBase + OrderId)
     );
   }
+  getByWarehouseId(pId: number): Promise<Order[]> {
+    return firstValueFrom(
+      this.httpClient.get<Order[]>(this.urlBase + 'warehouse/' + pId))
+  }
+  getByWarehouseIdStatus(pId: number, pStatus: number): Promise<Order[]> {
+    return firstValueFrom(
+      this.httpClient.get<Order[]>(this.urlBase + 'warehouse/' + pId + '/status/' + pStatus))
+  }
+  getByWarehouseIdStatusCat(pId: number, pStatus: number, pCategory: string): Promise<Order[]> {
+    return firstValueFrom(
+      this.httpClient.get<Order[]>(this.urlBase + 'warehouse/' + pId + '/status/' + pStatus + '/category/' + pCategory))
+  }
 }

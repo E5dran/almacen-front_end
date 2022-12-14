@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/interfaces/order.interface';
-
+import { OrderService } from 'src/app/services/order.service';
 @Component({
   selector: 'app-entrada',
   templateUrl: './entrada.component.html',
@@ -12,14 +12,15 @@ export class EntradaComponent implements OnInit {
   nombre: string;
   apellido: string;
   fecha: Date;
-  constructor() {
+  constructor(private orderService: OrderService) {
     this.nombre = '',
       this.apellido = '',
       this.fecha = new Date(),
       this.orders = []
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.orders = await this.orderService.getByWarehouseIdStatusCat(1, 1, 's')
   }
 
 }
