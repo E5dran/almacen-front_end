@@ -11,9 +11,7 @@ export class OrderModifyComponent implements OnInit {
 
   arrModOrder: Order[];
 
-  constructor(
-    private router: Router
-  ) {
+  constructor() {
     this.arrModOrder = [];
   }
 
