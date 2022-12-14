@@ -9,8 +9,14 @@ import { Order } from 'src/app/interfaces/order.interface';
 export class EntradaComponent implements OnInit {
 
   orders: Order[]
+  nombre: string;
+  apellido: string;
+  fecha: Date;
   constructor() {
-    this.orders = []
+    this.nombre = '',
+      this.apellido = '',
+      this.fecha = new Date(),
+      this.orders = []
   }
 
   ngOnInit(): void {
