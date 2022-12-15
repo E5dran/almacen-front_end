@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
 @Component({
   selector: 'app-create-order',
@@ -10,9 +11,7 @@ export class CreateOrderComponent implements OnInit {
 
   createOrder: FormGroup;
 
-  constructor(
-    private orderService: OrderService
-  ) {
+  constructor(private orderService: OrderService, private router: Router) {
     this.createOrder = new FormGroup({
       addressee: new FormControl(),
       description: new FormControl(),
@@ -29,11 +28,10 @@ export class CreateOrderComponent implements OnInit {
   }
 
   async onSubmit() {
-    const newOrder = await this.orderService.register(this.createOrder.value);
+    const response = await this.orderService.register(this.createOrder.value);
     console.log(this.createOrder.value);
-    console.log(newOrder);
-
-
+    console.log(response);
+    this.router.navigate(['/operario', 'order', 'modify']);
   }
 
 }

@@ -5,11 +5,4 @@ h2 {
 .col-6 {
     display: grid;
     place-content: center;
-
-}
-
-button {
-    background-color: rgb(6, 78, 75);
-    color: white;
-    width: 6em;
 }

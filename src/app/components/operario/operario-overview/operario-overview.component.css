@@ -1,9 +1,11 @@
-.container {
-    display: flex;
+h2 {
     text-align: center;
-    align-items: center;
 }
 
 .table {
-    background-color: white;
+    overflow: scroll;
+}
+
+.table tbody tr {
+    cursor: pointer;
 }

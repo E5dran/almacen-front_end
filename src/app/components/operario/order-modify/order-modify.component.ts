@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from 'src/app/interfaces/order.interface';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-order-modify',
@@ -11,13 +12,14 @@ export class OrderModifyComponent implements OnInit {
 
   arrModOrder: Order[];
 
-  constructor() {
+  constructor(private orderService: OrderService) {
     this.arrModOrder = [];
   }
 
 
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.arrModOrder = await this.orderService.getAll();
   }
 
 }

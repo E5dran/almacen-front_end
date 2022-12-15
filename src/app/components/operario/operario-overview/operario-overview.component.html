@@ -1,9 +1,11 @@
 <nav-operario></nav-operario>
 <div class="container">
-    <div class="table">
-        <table>
+    <h2>Mis Pedidos</h2>
+
+    <table class="table table-sm">
+        <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Warehouse Id</th>
                 <th>Status</th>
                 <th>Addressee</th>
@@ -16,6 +18,8 @@
                 <th>Truck Plate</th>
                 <th>Category</th>
             </tr>
+        </thead>
+        <tbody class="table-group-divider">
             <tr *ngFor="let order of arrOrders">
                 <td>{{order.id}}</td>
                 <td>{{order.warehouse_id}}</td>
@@ -30,8 +34,6 @@
                 <td>{{order.truck_plate}}</td>
                 <td>{{order.category}}</td>
             </tr>
-
-        </table>
-
-    </div>
+        </tbody>
+    </table>
 </div>
