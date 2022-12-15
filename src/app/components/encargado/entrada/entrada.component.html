@@ -20,14 +20,13 @@
                 <th scope="col">Nº Items</th>
             </tr>
         </thead>
-        <tbody class="table-group-divider text-center" *ngFor="let order of orders">
-            <tr [routerLink]="['/operario','order','modify', order.id]">
-                <td> <input type="checkbox"></td>
+        <tbody class="table-group-divider text-center">
+            <tr *ngFor="let order of orders">
+                <td> <input type="checkbox" (click)="updateStatus(order.id)"></td>
                 <td>{{order.id}}</td>
                 <td>{{order.category}}</td>
                 <td>{{order.description}}</td>
                 <td>{{order.n_items}}</td>
-
             </tr>
         </tbody>
     </table>

@@ -50,4 +50,11 @@ export class OrderService {
     return firstValueFrom(
       this.httpClient.get<Order[]>(this.urlBase + 'warehouse/' + pId + '/status/' + pStatus + '/category/' + pCategory))
   }
+
+  updateStatus(orderId: number, category: string): Promise<any> {
+    return firstValueFrom(
+      this.httpClient.put<any>(this.urlBase, orderId + '/category/' + category)
+    );
+  }
+
 }
