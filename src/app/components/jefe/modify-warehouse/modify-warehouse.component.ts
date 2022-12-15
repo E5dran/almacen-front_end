@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Warehouse } from 'src/app/interfaces/warehouse.interface';
 import { WarehouseService } from 'src/app/services/warehouse.service';
 
@@ -12,13 +13,13 @@ export class ModifyWarehouseComponent implements OnInit {
   arrModwarehouse: Warehouse[];
 
 
-  constructor(private warehouseService: WarehouseService) {
+  constructor(private warehouseService: WarehouseService, private router: Router) {
     this.arrModwarehouse = [];
   }
 
   async ngOnInit() {
     this.arrModwarehouse = await this.warehouseService.getAll()
-    console.log(this.arrModwarehouse)
+    this.router.navigate(['/jefe', 'warehouse', 'modify']);
   }
 
 }

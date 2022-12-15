@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { pipe } from 'rxjs';
 import { debounceTime } from 'rxjs';
 import { User } from 'src/app/interfaces/user.interface';
@@ -14,7 +15,7 @@ export class NewUserComponent implements OnInit {
 
     formulario: FormGroup;
 
-    constructor(private userService: UsuarioService) {
+    constructor(private userService: UsuarioService, private router: Router) {
         this.formulario = new FormGroup({
             name: new FormControl(),
             surname: new FormControl(),
@@ -25,25 +26,15 @@ export class NewUserComponent implements OnInit {
             dni: new FormControl(),
             gender: new FormControl(),
             category: new FormControl(),
-
         })
-
     }
-
-
     ngOnInit(): void {
-
-
     }
-
-
-
 
     async onSubmit() {
         await this.userService.register(this.formulario.value);
-
+        this.router.navigate(['/jefe', 'user', 'modify']);
     }
-
 }
 
 

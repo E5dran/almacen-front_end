@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { WarehouseService } from 'src/app/services/warehouse.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class NewWarehouseComponent implements OnInit {
 
   formulario: FormGroup
 
-  constructor(private warehouseService: WarehouseService) {
+  constructor(private warehouseService: WarehouseService, private router: Router) {
     this.formulario = new FormGroup({
       name: new FormControl(),
       address: new FormControl()
@@ -22,7 +23,8 @@ export class NewWarehouseComponent implements OnInit {
   }
 
   async onSubmit() {
-    await this.warehouseService.register(this.formulario.value)
+    await this.warehouseService.register(this.formulario.value);
+    this.router.navigate(['/jefe', 'warehouse', 'modify']);
   }
 
 }

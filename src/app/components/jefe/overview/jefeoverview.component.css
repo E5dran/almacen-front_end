@@ -1,50 +1,11 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+h2 {
+    text-align: center;
 }
-
 
 .table {
-    position: absolute;
-    top: 25%;
-    left: 28%;
-    background-color: white;
-    width: 70%;
-    height: 50%;
-    float: top;
     overflow: scroll;
-
-
 }
 
-.table table {
-    border-collapse: separate;
-    border-spacing: 100px 40px;
-    margin-left: 8%;
-    max-width: 100%;
-}
-
-tr {
-    border-bottom: 1px solid #ccc;
-}
-
-h2 {
-    color: white;
-    position: absolute;
-    top: 4%;
-    left: 63%;
-}
-
-.fecha {
-    color: white;
-    position: absolute;
-    top: 18.5%;
-    left: 75%;
-}
-
-@media (max-width: 900px) {
-    .fecha {
-        display: none;
-    }
+.table tbody tr {
+    cursor: pointer;
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -11,7 +13,10 @@ export class UserModifyIdComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private userService: UsuarioService) {
+  nId: number;
+  private rutaSub: Subscription;
+
+  constructor(private userService: UsuarioService, private router: ActivatedRoute, private routerLink: Router) {
     this.formulario = new FormGroup({
       name: new FormControl(),
       surname: new FormControl(),
@@ -24,22 +29,30 @@ export class UserModifyIdComponent implements OnInit {
       category: new FormControl(),
 
     })
+    this.nId = 0;
+    this.rutaSub = new Subscription;
   }
-
 
   ngOnInit(): void {
-  }
+    this.rutaSub = this.router.params.subscribe(params => {
 
+      this.nId = params['id']
+    });
+    console.log(this.nId);
+
+  }
 
   async onSubmit() {
-    await this.userService.getAll();
-
-
+    const response = await this.userService.modify(this.formulario.value, this.nId);
+    this.routerLink.navigate(['/jefe', 'user', 'modify']);
   }
+
   async deleteClick() {
-    console.log('hola');
-    //const response = await this.userService.delete(id);
-    //console.log(response);
+    const response = await this.userService.delete(this.nId);
+    this.routerLink.navigate(['/jefe', 'user', 'modify']);
   }
 
+  ngOnDestroy() {
+    this.rutaSub.unsubscribe();
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Warehouse } from 'src/app/interfaces/warehouse.interface';
+import { WarehouseService } from 'src/app/services/warehouse.service';
 
 
 @Component({
@@ -9,22 +10,14 @@ import { Warehouse } from 'src/app/interfaces/warehouse.interface';
 })
 export class JefeoverviewComponent implements OnInit {
 
-  arrDatos: Warehouse[];
+  arrWarehouses: Warehouse[];
 
-  constructor() {
-    this.arrDatos = [{
-      id: 1,
-      name: 'center',
-      address: 'c/Alava 14'
-
-    }];
-
+  constructor(private warehouseService: WarehouseService) {
+    this.arrWarehouses = [];
   }
 
-
-
-
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.arrWarehouses = await this.warehouseService.getAll()
   }
 
 }
