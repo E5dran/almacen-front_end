@@ -26,25 +26,16 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(6),
         Validators.maxLength(8)
-      ]
-      )
-    })
-
-
-
+      ])
+    });
   }
 
   ngOnInit(): void {
-
     if (this.currentHour < 12) {
       this.saludo = 'Buenos días';
     } else {
       this.saludo = 'Buenas tardes';
     }
-
-
-
-
   }
 
   onSubmit() {
