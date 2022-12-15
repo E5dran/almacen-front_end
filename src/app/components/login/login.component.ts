@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 
 @Component({
@@ -14,7 +16,10 @@ export class LoginComponent implements OnInit {
   saludo: string
 
 
-  constructor() {
+  constructor(
+    private userService: UsuarioService,
+    private router: Router
+  ) {
     this.currentHour = new Date().getHours();
     this.saludo = ''
 
@@ -38,11 +43,20 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    console.log(this.formularioLogin.value)
 
-    // enviar a la base de datos para que nos de la autorizacion
+  async onSubmit() {
+    const response = await this.userService.login(this.formularioLogin.value);
 
+    if (response.success) {
+      localStorage.setItem('token', response.token);
+      if (response.category === 'jefe') {
+        this.router.navigate(['/jefe', 'overview'])
+      } else if (response.category === 'encargado') {
+        this.router.navigate(['/encargado', 'overview'])
+      } else if (response.category === 'operario') {
+        this.router.navigate(['/operario', 'overview'])
+      }
+    } else { alert(response.fatal) };
   }
 
 

@@ -38,4 +38,10 @@ export class UsuarioService {
       this.httpClient.delete<any>(this.urlBase + userId)
     );
   }
+
+  login(user: any) {
+    return firstValueFrom(
+      this.httpClient.post<any>(this.urlBase + '/login', user)
+    );
+  }
 }
