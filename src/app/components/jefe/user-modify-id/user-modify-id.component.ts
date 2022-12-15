@@ -33,13 +33,13 @@ export class UserModifyIdComponent implements OnInit {
 
   async onSubmit() {
     await this.userService.getAll();
-    const response = await this.userService.delete(this.formulario.value);
 
 
   }
-  async deleteClick(id: Number) {
-    const response = await this.userService.delete(id);
-    console.log(response);
+  async deleteClick() {
+    console.log('hola');
+    //const response = await this.userService.delete(id);
+    //console.log(response);
   }
 
 }

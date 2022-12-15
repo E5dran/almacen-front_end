@@ -54,7 +54,7 @@
         </div>
 
         <div>
-            <button class="btn btn-danger m-3">Delete</button>
+            <button class="btn btn-danger m-3" (click)="deleteClick()">Delete</button>
 
             <input type="submit" value="Send" [disabled]="!formulario.valid" class="btn btn-info m-3" [ngClass]="{
             'btn-danger': !formulario.valid
