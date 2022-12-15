@@ -19,7 +19,17 @@ export class SalidaComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.orders = await this.orderService.getByWarehouseIdStatusCat(1, 1, 's')
+    this.orders = await this.orderService.getByWarehouseIdStatusCat(2, 1, 's')
   }
+
+  async updateStatus(orderId: number) {
+    const currentdate = new Date();
+    const letra = 'e'
+    const response2 = await this.orderService.updateStatus(orderId, letra)
+    const response = await this.orderService.updateFechaSalida(orderId, currentdate)
+    console.log(response, response2, currentdate)
+
+  }
+
 
 }

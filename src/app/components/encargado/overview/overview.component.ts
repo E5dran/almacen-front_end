@@ -12,11 +12,13 @@ export class OverviewComponent implements OnInit {
   apellido: string
   fecha: Date
   orders: Order[]
+  encargado: number
   constructor(private orderService: OrderService) {
     this.orders = []
     this.nombre = 'Juan'
     this.apellido = 'Perez'
     this.fecha = new Date()
+    this.encargado = 0
   }
 
   async ngOnInit() {

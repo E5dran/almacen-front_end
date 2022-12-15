@@ -20,12 +20,16 @@ export class EntradaComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.orders = await this.orderService.getByWarehouseIdStatusCat(2, 1, 's')
+    this.orders = await this.orderService.getByWarehouseIdStatusCat(2, 1, 'e')
   }
 
   async updateStatus(orderId: number) {
-    const response = await this.orderService.updateStatus(orderId, 'e')
-    console.log(response)
+    const currentdate = new Date();
+    const letra = 'a'
+    const response2 = await this.orderService.updateStatus(orderId, letra)
+    const response = await this.orderService.updateFechaLlegada(orderId, currentdate)
+    console.log(response, response2, currentdate)
+
   }
 
 

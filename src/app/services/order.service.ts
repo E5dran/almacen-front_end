@@ -51,10 +51,24 @@ export class OrderService {
       this.httpClient.get<Order[]>(this.urlBase + 'warehouse/' + pId + '/status/' + pStatus + '/category/' + pCategory))
   }
 
-  updateStatus(orderId: number, category: string): Promise<any> {
+  updateStatus(orderId: number, category: string) {
+    const cat = { category }
     return firstValueFrom(
-      this.httpClient.put<any>(this.urlBase, orderId + '/category/' + category)
+      this.httpClient.put<any>(this.urlBase + orderId + '/category', cat)
     );
   }
 
+  updateFechaSalida(orderId: number, fecha: Date) {
+    const fech = { fecha }
+    return firstValueFrom(
+      this.httpClient.put<any>(this.urlBase + orderId + '/departureDate', fech)
+    );
+  }
+
+  updateFechaLlegada(orderId: number, fecha: Date) {
+    const fech = { fecha }
+    return firstValueFrom(
+      this.httpClient.put<any>(this.urlBase + orderId + '/arrivalDate', fech)
+    );
+  }
 }
