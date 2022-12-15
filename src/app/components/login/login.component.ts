@@ -47,14 +47,25 @@ export class LoginComponent implements OnInit {
   async onSubmit() {
     const response = await this.userService.login(this.formularioLogin.value);
 
+
+    console.log(this.formularioLogin.value, response, typeof (response.category));
+
     if (response.success) {
       localStorage.setItem('token', response.token);
+      localStorage.setItem('warehouse', response.warehouse_id);
+
       if (response.category === 'jefe') {
-        this.router.navigate(['/jefe', 'overview'])
+        console.log('DENTRO DE IF CAT=JEFE');
+        this.router.navigate(['/jefe', 'overview']);
+
       } else if (response.category === 'encargado') {
-        this.router.navigate(['/encargado', 'overview'])
+
+        this.router.navigate(['/encargado', 'overview']);
+
       } else if (response.category === 'operario') {
-        this.router.navigate(['/operario', 'overview'])
+
+        this.router.navigate(['/operario', 'overview']);
+
       }
     } else { alert(response.fatal) };
   }

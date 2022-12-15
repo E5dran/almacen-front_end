@@ -33,7 +33,8 @@ const routes: Routes = [
   { path: 'jefe/user/modify', component: ModifyUserComponent },
   { path: 'jefe/warehouse/modify', component: ModifyWarehouseComponent },
   { path: 'jefe/user/modify/:id', component: UserModifyIdComponent },
-  { path: 'jefe/warehouse/modify/:id', component: WarehouseModifyIdComponent }
+  { path: 'jefe/warehouse/modify/:id', component: WarehouseModifyIdComponent },
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({
