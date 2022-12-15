@@ -14,8 +14,8 @@
 
             </tr>
         </thead>
-        <tbody class="table-group-divider" *ngFor="let warehouse of arrModwarehouse">
-            <tr [routerLink]="['/jefe','warehouse','modify',warehouse.id]">
+        <tbody class="table-group-divider">
+            <tr *ngFor="let warehouse of arrModwarehouse" [routerLink]="['/jefe','warehouse','modify',warehouse.id]">
 
                 <td>{{warehouse.id}}</td>
                 <td>{{warehouse.name}}</td>

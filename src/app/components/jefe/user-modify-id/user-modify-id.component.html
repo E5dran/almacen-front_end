@@ -1,11 +1,10 @@
 <nav-jefe></nav-jefe>
 <div class="container">
     <h2>User Modify</h2>
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formulario" class="row y justify-content-center " (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" formControlName="name">
-
         </div>
         <div class="mb-3">
             <label class="form-label">surname</label>
@@ -32,11 +31,9 @@
             <input type="text" class="form-control" formControlName="dni">
         </div>
         <div class="mb-3">
-
             <label class="form-label">gender</label>
             <select class="form-select" formControlName="gender">
                 <option selected hidden></option>
-
                 <option value="m">hombre</option>
                 <option value="f">mujer</option>
                 <option value="other">other</option>
@@ -57,8 +54,7 @@
             <button class="btn btn-danger m-3" (click)="deleteClick()">Delete</button>
 
             <input type="submit" value="Send" [disabled]="!formulario.valid" class="btn btn-info m-3" [ngClass]="{
-            'btn-danger': !formulario.valid
-        }">
+            'btn-danger': !formulario.valid}">
         </div>
     </form>
 </div>

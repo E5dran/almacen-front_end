@@ -17,9 +17,8 @@
                 <th scope="col">CATEGORY</th>
             </tr>
         </thead>
-        <tbody class="table-group-divider" *ngFor="let user of arrModUser">
-            <tr [routerLink]="['/jefe','user','modify',user.id]">
-
+        <tbody class="table-group-divider">
+            <tr *ngFor="let user of arrModUser" [routerLink]="['/jefe','user','modify',user.id]">
                 <td>{{user.id}}</td>
                 <td>{{user.name}}{{user.surname}}</td>
                 <td>{{user.email}}</td>
@@ -28,7 +27,6 @@
                 <td>{{user.dni}}</td>
                 <td>{{user.category}}</td>
             </tr>
-
         </tbody>
     </table>
 </div>

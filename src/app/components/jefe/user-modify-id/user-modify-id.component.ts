@@ -43,12 +43,12 @@ export class UserModifyIdComponent implements OnInit {
   }
 
   async onSubmit() {
-    const response = await this.userService.modify(this.formulario.value, this.nId);
+    await this.userService.modify(this.formulario.value, this.nId);
     this.routerLink.navigate(['/jefe', 'user', 'modify']);
   }
 
   async deleteClick() {
-    const response = await this.userService.delete(this.nId);
+    await this.userService.delete(this.nId);
     this.routerLink.navigate(['/jefe', 'user', 'modify']);
   }
 
