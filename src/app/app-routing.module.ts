@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'operario/overview', component: OperarioOverviewComponent },
   { path: 'operario/order/new', component: CreateOrderComponent },
   { path: 'operario/order/modify', component: OrderModifyComponent },
-  { path: 'operario/order/modify/:Id', component: IdModifyComponent },
+  { path: 'operario/order/modify/:id', component: IdModifyComponent },
   { path: 'jefe/warehouse/new', component: NewWarehouseComponent },
   { path: 'jefe/user/modify', component: ModifyUserComponent },
   { path: 'jefe/warehouse/modify', component: ModifyWarehouseComponent },
