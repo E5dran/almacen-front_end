@@ -3,43 +3,34 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-
   private urlBase: string;
 
   constructor(private httpClient: HttpClient) {
     this.urlBase = 'http://localhost:3000/api/users/';
 
   }
-
   getAll(): Promise<User[]> {
     return firstValueFrom(
-      this.httpClient.get<User[]>(this.urlBase
-      )
+      this.httpClient.get<User[]>(this.urlBase)
     );
-
   }
-  //pendiente y sujeta acambios
   getByDni(pDni: string): Promise<User[]> {
     return firstValueFrom(
       this.httpClient.get<User[]>(this.urlBase + pDni)
     );
   }
-
   register(newUser: User) {
     return firstValueFrom(
       this.httpClient.post<any>(this.urlBase, newUser)
     );
   }
-
-  modify(newUser: User) {
+  modify(newUser: User, userId: number) {
     return firstValueFrom(
-      this.httpClient.put<any>(this.urlBase, newUser)
+      this.httpClient.put<any>(this.urlBase + userId, newUser)
     );
   }
   delete(userId: number) {
