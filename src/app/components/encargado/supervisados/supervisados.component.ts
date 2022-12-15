@@ -20,7 +20,7 @@ export class SupervisadosComponent implements OnInit {
 
   async ngOnInit() {
 
-    this.orders = await this.orderService.getByWarehouseIdStatus(1, 0)
+    this.orders = await this.orderService.getByWarehouseIdStatus(2, 1)
   }
 
 }
