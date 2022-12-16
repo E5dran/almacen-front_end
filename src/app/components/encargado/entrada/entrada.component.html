@@ -22,7 +22,7 @@
         </thead>
         <tbody class="table-group-divider text-center">
             <tr *ngFor="let order of orders">
-                <td> <input type="checkbox" (click)="updateStatus(order.id)"></td>
+                <td> <input type="checkbox" (change)="onCheckboxChange(order.id)"></td>
                 <td>{{order.id}}</td>
                 <td>{{order.category}}</td>
                 <td>{{order.description}}</td>
@@ -31,3 +31,4 @@
         </tbody>
     </table>
 </div>
+<button id="button" class="btn btn-primary text-right" (click)="updateStatus(sendOrders)">Enviar</button>

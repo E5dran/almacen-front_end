@@ -12,3 +12,11 @@
 .nombre.fecha {
     color: rgb(6, 78, 75);
 }
+
+#button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: rgb(6, 78, 75);
+    border: none;
+}
