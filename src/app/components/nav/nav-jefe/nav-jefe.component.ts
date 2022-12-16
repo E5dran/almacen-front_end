@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nav-jefe',
@@ -15,7 +16,7 @@ export class NavJefeComponent implements OnInit {
   color: string;
   backgroundColor: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.sidebarWidth = '0px';
     this.activo = false;
     this.inactivo = true;
@@ -50,4 +51,10 @@ export class NavJefeComponent implements OnInit {
     this.inactivo = !this.inactivo
   }
 
+  logout() {
+    if (confirm("¿Estás seguro de querer cerrar sesión?")) {
+      localStorage.removeItem('token');
+      this.router.navigate(['/login']);
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nav-encargado',
@@ -15,7 +16,7 @@ export class NavEncargadoComponent implements OnInit {
   color: string;
   backgroundColor: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.sidebarWidth = '0px';
     this.activo = false;
     this.inactivo = true;
@@ -49,4 +50,11 @@ export class NavEncargadoComponent implements OnInit {
     this.inactivo = !this.inactivo
   }
 
+  logout() {
+    if (confirm("¿Estás seguro de querer cerrar sesión?")) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('warehouse');
+      this.router.navigate(['/login']);
+    }
+  }
 }

@@ -51,4 +51,12 @@ export class NavOperarioComponent implements OnInit {
     this.inactivo = !this.inactivo
   }
 
+  logout() {
+    if (confirm("¿Estás seguro de querer cerrar sesión?")) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('warehouse');
+      localStorage.removeItem('user');
+      this.router.navigate(['/login']);
+    }
+  }
 }

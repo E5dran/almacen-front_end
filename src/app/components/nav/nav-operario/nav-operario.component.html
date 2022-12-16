@@ -14,5 +14,5 @@
         <li [routerLink]="['/operario','order','new']">Crear Pedido</li>
         <li [routerLink]="['/operario','order','modify']">Modificar Pedido</li>
     </ul>
-    <button class=" btn btn-danger" id="button">Logout</button>
+    <button *ngIf="this.sidebarWidth !== '50px'" class="m-4 btn btn-danger col-9" id="button" (click)="logout()">Logout</button>
 </nav>

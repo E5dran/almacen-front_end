@@ -80,15 +80,13 @@
 }
 
 #button {
-    color: white;
-    background-color: transparent;
-    border: 1px solid white;
     border-radius: 15px;
     padding: 5%;
     position: absolute;
     bottom: 50px;
     margin-left: 10px;
 }
+
 
 @media (max-width: 768px) {
     #sidebar {
