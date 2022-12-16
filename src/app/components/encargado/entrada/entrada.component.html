@@ -9,25 +9,30 @@
         </div>
 
     </div>
+    <div class="overflow-scroll">
 
-    <table class="table table-sm text-center">
-        <thead class="text-center">
-            <tr>
-                <th scope="col">Validado</th>
-                <th scope="col">#</th>
-                <th scope="col">CATEGORY</th>
-                <th scope="col">DESCRIPTION</th>
-                <th scope="col">Nº Items</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider text-center">
-            <tr *ngFor="let order of orders">
-                <td> <input type="checkbox" (click)="updateStatus(order.id)"></td>
-                <td>{{order.id}}</td>
-                <td>{{order.category}}</td>
-                <td>{{order.description}}</td>
-                <td>{{order.n_items}}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table table-sm text-center">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col">Validado</th>
+                    <th scope="col">#</th>
+                    <th scope="col">CATEGORY</th>
+                    <th scope="col">DESCRIPTION</th>
+                    <th scope="col">Nº Items</th>
+                </tr>
+            </thead>
+
+            <tbody class="table-group-divider text-center ">
+                <tr *ngFor="let order of orders">
+                    <td> <input type="checkbox" (change)="onCheckboxChange(order.id)"></td>
+                    <td>{{order.id}}</td>
+                    <td>{{order.category}}</td>
+                    <td>{{order.description}}</td>
+                    <td>{{order.n_items}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
 </div>
+<button id="button" class="btn btn-primary text-right" (click)="updateStatus(sendOrders)">Enviar</button>

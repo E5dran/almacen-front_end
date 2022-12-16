@@ -1,14 +1,12 @@
-.table {
-    position: absolute;
-    top: 150px;
-    left: 280px;
-    background-color: white;
-    width: 70%;
-    height: 50%;
-    float: top;
+.overflow-scroll {
     overflow: scroll;
+    height: 400px;
 }
 
-.nombre.fecha {
-    color: rgb(6, 78, 75);
+#button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: rgb(6, 78, 75);
+    border: none;
 }

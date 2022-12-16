@@ -11,25 +11,45 @@ export class SalidaComponent implements OnInit {
   apellido: string
   fecha: Date
   orders: Order[]
+  sendOrders: Order[]
+  warehouse: number | null
+
+
   constructor(private orderService: OrderService) {
     this.orders = []
     this.nombre = 'Juan'
     this.apellido = 'Perez'
     this.fecha = new Date()
+    this.sendOrders = []
+    this.warehouse = 0
+
   }
 
   async ngOnInit() {
-    this.orders = await this.orderService.getByWarehouseIdStatusCat(2, 1, 's')
+    const warehouseId = localStorage.getItem('warehouse')
+    const intValue = parseInt(warehouseId!)
+    this.warehouse = intValue
+    this.orders = await this.orderService.getByWarehouseIdStatusCat(this.warehouse, 1, 's')
   }
 
-  async updateStatus(orderId: number) {
+  onCheckboxChange(orderId: number) {
+    this.sendOrders.push(this.orders.find(order => order.id === orderId)!)
+    console.log(this.sendOrders)
+  }
+
+
+  async updateStatus(pArray: Order[]) {
     const currentdate = new Date();
     const letra = 'e'
-    const response2 = await this.orderService.updateStatus(orderId, letra)
-    const response = await this.orderService.updateFechaSalida(orderId, currentdate)
-    console.log(response, response2, currentdate)
-
+    for (let order of this.sendOrders) {
+      const orderId = order.id
+      const response2 = await this.orderService.updateStatus(orderId, letra)
+      const response = await this.orderService.updateFechaSalida(orderId, currentdate)
+      console.log(response, response2, currentdate)
+      window.location.reload();
+    }
   }
+
 
 
 }

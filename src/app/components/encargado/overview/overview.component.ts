@@ -12,17 +12,21 @@ export class OverviewComponent implements OnInit {
   apellido: string
   fecha: Date
   orders: Order[]
-  encargado: number
+  warehouse: number | null
+
   constructor(private orderService: OrderService) {
     this.orders = []
     this.nombre = 'Juan'
     this.apellido = 'Perez'
     this.fecha = new Date()
-    this.encargado = 0
+    this.warehouse = 0
   }
 
   async ngOnInit() {
-    this.orders = await this.orderService.getByWarehouseId(1)
+    const warehouseId = localStorage.getItem('warehouse')
+    const intValue = parseInt(warehouseId!)
+    this.warehouse = intValue
+    this.orders = await this.orderService.getByWarehouseId(this.warehouse)
     console.log(this.orders)
   }
 

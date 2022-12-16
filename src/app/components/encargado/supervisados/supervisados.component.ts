@@ -11,16 +11,26 @@ export class SupervisadosComponent implements OnInit {
   apellido: string
   fecha: Date
   orders: Order[]
+  warehouse: number | null
+
   constructor(private orderService: OrderService) {
     this.orders = []
     this.nombre = 'Juan'
     this.apellido = 'Perez'
     this.fecha = new Date()
+    this.warehouse = 0
+
   }
 
   async ngOnInit() {
-
-    this.orders = await this.orderService.getByWarehouseIdStatus(2, 1)
+    const warehouseId = localStorage.getItem('warehouse')
+    const intValue = parseInt(warehouseId!)
+    this.warehouse = intValue
+    this.orders = await this.orderService.getByWarehouseIdStatus(this.warehouse, 1)
   }
+
+
+
+
 
 }
