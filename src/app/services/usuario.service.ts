@@ -41,7 +41,7 @@ export class UsuarioService {
 
   login(user: any) {
     return firstValueFrom(
-      this.httpClient.post<any>(this.urlBase + '/login', user)
+      this.httpClient.post<any>(this.urlBase + 'login', user)
     );
   }
 }
