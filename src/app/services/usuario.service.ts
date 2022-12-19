@@ -18,10 +18,11 @@ export class UsuarioService {
       this.httpClient.get<User[]>(this.urlBase)
     );
   }
-  getByDni(pDni: string): Promise<User[]> {
+  getByDni(pDni: string) {
+    const obj = { dni: pDni }
     return firstValueFrom(
-      this.httpClient.get<User[]>(this.urlBase + pDni) /* cambiar */
-    );
+      this.httpClient.post<any>(this.urlBase + 'dni', obj))
+      ;
   }
   register(newUser: User) {
     return firstValueFrom(

@@ -22,14 +22,14 @@ export class ModifyUserComponent implements OnInit {
 
   async ngOnInit() {
     this.arrModUser = await this.userService.getAll()
-    this.router.navigate(['/jefe', 'user', 'modify']);
   }
 
 
   async searchUserDni(pDni: string) {
-    const response = await this.userService.getByDni(this.dni)
-    console.log(this.dni);
-    console.log(response);
-
+    if (pDni === '') {
+      this.arrModUser = await this.userService.getAll()
+    } else {
+      this.arrModUser = await this.userService.getByDni(pDni)
+    }
   }
 }

@@ -21,17 +21,18 @@ export class ModifyWarehouseComponent implements OnInit {
 
   async ngOnInit() {
     this.arrModwarehouse = await this.warehouseService.getAll()
-    this.router.navigate(['/jefe', 'warehouse', 'modify']);
   }
 
 
   async searchName(pName: string) {
-    const response = await this.warehouseService.getByWarehouseName(pName)
-    console.log(response);
-  };
+    if (pName === '') {
+      this.arrModwarehouse = await this.warehouseService.getAll()
+    } else {
+      this.arrModwarehouse = await this.warehouseService.getByWarehouseName(pName)
+    }
 
-
-}
+  }
+};
 
 
 
