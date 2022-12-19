@@ -10,16 +10,23 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class OrderModifyComponent implements OnInit {
 
+  word: string;
   arrModOrder: Order[];
 
   constructor(private orderService: OrderService) {
     this.arrModOrder = [];
+    this.word = '';
   }
-
-
-
   async ngOnInit() {
     this.arrModOrder = await this.orderService.getAll();
   }
+
+  async searchName(pName: string) {
+    const response = await this.orderService.getByOrderClient(this.word)
+    console.log(this.word);
+    console.log(response);
+
+  };
+
 
 }
