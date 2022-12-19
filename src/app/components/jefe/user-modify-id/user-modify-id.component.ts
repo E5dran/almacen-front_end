@@ -27,8 +27,7 @@ export class UserModifyIdComponent implements OnInit {
       dni: new FormControl(),
       gender: new FormControl(),
       category: new FormControl(),
-
-    })
+    });
     this.nId = 0;
     this.rutaSub = new Subscription;
   }

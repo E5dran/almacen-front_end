@@ -17,29 +17,26 @@ export class WarehouseModifyIdComponent implements OnInit {
   private rutaSub: Subscription;
 
   constructor(private warehouseService: WarehouseService, private router: ActivatedRoute, private routerLink: Router) {
-
-
     this.formulario = new FormGroup({
       id: new FormControl(),
       name: new FormControl(),
       address: new FormControl(),
-
-    })
+    });
     this.nId = 0;
     this.rutaSub = new Subscription;
   }
 
   ngOnInit(): void {
-    this.rutaSub = this.router.params.subscribe(params => {
-
-      this.nId = params['id']
+    this.rutaSub = this.router.params.subscribe(async (params) => {
+      this.nId = params['id'];
+      const [modWare] = await this.warehouseService.getById(this.nId);
+      this.formulario.get('name')?.setValue(modWare.name);
+      this.formulario.get('address')?.setValue(modWare.address);
     });
-    console.log(this.nId);
-
   }
 
   async onSubmit() {
-    await this.warehouseService.modify(this.formulario.value, this.nId);
+    const response = await this.warehouseService.modify(this.formulario.value, this.nId);
     this.routerLink.navigate(['/jefe', 'warehouse', 'modify']);
   }
 
