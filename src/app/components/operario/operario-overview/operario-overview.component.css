@@ -2,6 +2,11 @@ h2 {
   text-align: center;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+  height: 600px;
+}
+
 .table {
   overflow: scroll;
 }
