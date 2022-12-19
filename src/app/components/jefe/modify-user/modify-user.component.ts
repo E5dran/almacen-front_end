@@ -11,11 +11,13 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class ModifyUserComponent implements OnInit {
 
+  dni: string;
   arrModUser: User[];
 
 
   constructor(private userService: UsuarioService, private router: Router) {
     this.arrModUser = [];
+    this.dni = '';
   }
 
   async ngOnInit() {
@@ -23,4 +25,11 @@ export class ModifyUserComponent implements OnInit {
     this.router.navigate(['/jefe', 'user', 'modify']);
   }
 
+
+  async searchUserDni(pDni: string) {
+    const response = await this.userService.getByDni(this.dni)
+    console.log(this.dni);
+    console.log(response);
+
+  }
 }
