@@ -17,23 +17,24 @@ import { UserModifyIdComponent } from './components/jefe/user-modify-id/user-mod
 import { WarehouseModifyIdComponent } from './components/jefe/warehouse-modify-id/warehouse-modify-id.component';
 
 import { SupervisadosComponent } from './components/encargado/supervisados/supervisados.component';
+import { LoginGuard } from './guard/login.guard';
 const routes: Routes = [
-  { path: 'encargado/overview', component: OverviewComponent },
+  { path: 'encargado/overview', component: OverviewComponent, canActivate: [LoginGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'jefe/overview', component: JefeoverviewComponent },
-  { path: 'jefe/user/new', component: NewUserComponent },
-  { path: 'encargado/salida', component: SalidaComponent },
-  { path: 'encargado/entrada', component: EntradaComponent },
-  { path: 'encargado/supervisados', component: SupervisadosComponent },
-  { path: 'operario/overview', component: OperarioOverviewComponent },
-  { path: 'operario/order/new', component: CreateOrderComponent },
-  { path: 'operario/order/modify', component: OrderModifyComponent },
-  { path: 'operario/order/modify/:id', component: IdModifyComponent },
-  { path: 'jefe/warehouse/new', component: NewWarehouseComponent },
-  { path: 'jefe/user/modify', component: ModifyUserComponent },
-  { path: 'jefe/warehouse/modify', component: ModifyWarehouseComponent },
-  { path: 'jefe/user/modify/:id', component: UserModifyIdComponent },
-  { path: 'jefe/warehouse/modify/:id', component: WarehouseModifyIdComponent },
+  { path: 'jefe/overview', component: JefeoverviewComponent, canActivate: [LoginGuard] },
+  { path: 'jefe/user/new', component: NewUserComponent, canActivate: [LoginGuard] },
+  { path: 'encargado/salida', component: SalidaComponent, canActivate: [LoginGuard] },
+  { path: 'encargado/entrada', component: EntradaComponent, canActivate: [LoginGuard] },
+  { path: 'encargado/supervisados', component: SupervisadosComponent, canActivate: [LoginGuard] },
+  { path: 'operario/overview', component: OperarioOverviewComponent, canActivate: [LoginGuard] },
+  { path: 'operario/order/new', component: CreateOrderComponent, canActivate: [LoginGuard] },
+  { path: 'operario/order/modify', component: OrderModifyComponent, canActivate: [LoginGuard] },
+  { path: 'operario/order/modify/:id', component: IdModifyComponent, canActivate: [LoginGuard] },
+  { path: 'jefe/warehouse/new', component: NewWarehouseComponent, canActivate: [LoginGuard] },
+  { path: 'jefe/user/modify', component: ModifyUserComponent, canActivate: [LoginGuard] },
+  { path: 'jefe/warehouse/modify', component: ModifyWarehouseComponent, canActivate: [LoginGuard] },
+  { path: 'jefe/user/modify/:id', component: UserModifyIdComponent, canActivate: [LoginGuard] },
+  { path: 'jefe/warehouse/modify/:id', component: WarehouseModifyIdComponent, canActivate: [LoginGuard] },
   { path: '**', component: LoginComponent }
 ];
 
