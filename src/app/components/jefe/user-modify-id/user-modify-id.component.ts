@@ -34,16 +34,23 @@ export class UserModifyIdComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.rutaSub = this.router.params.subscribe(params => {
-
-      this.nId = params['id']
+    this.rutaSub = this.router.params.subscribe(async (params) => {
+      this.nId = params['id'];
+      const [modUser] = await this.userService.getById(this.nId);
+      this.formulario.get('name')?.setValue(modUser.name);
+      this.formulario.get('surname')?.setValue(modUser.surname);
+      this.formulario.get('email')?.setValue(modUser.email);
+      this.formulario.get('password')?.setValue(modUser.password);
+      this.formulario.get('phone')?.setValue(modUser.phone);
+      this.formulario.get('adress')?.setValue(modUser.adress);
+      this.formulario.get('dni')?.setValue(modUser.dni);
+      this.formulario.get('gender')?.setValue(modUser.gender);
+      this.formulario.get('category')?.setValue(modUser.category);
     });
-    console.log(this.nId);
-
   }
 
   async onSubmit() {
-    await this.userService.modify(this.formulario.value, this.nId);
+    const response = await this.userService.modify(this.formulario.value, this.nId);
     this.routerLink.navigate(['/jefe', 'user', 'modify']);
   }
 

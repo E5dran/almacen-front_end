@@ -47,7 +47,7 @@ export class IdModifyComponent implements OnInit {
 
   async onSubmit() {
     const respoonse = await this.orderService.modify(this.modifyOrder.value, this.nId);
-    console.log(respoonse);
+
 
     this.routerLink.navigate(['/operario', 'order', 'modify']);
   }
