@@ -18,11 +18,17 @@ export class UsuarioService {
       this.httpClient.get<User[]>(this.urlBase)
     );
   }
+
+  getById(pId: number): Promise<User[]> {
+    return firstValueFrom(this.httpClient.get<User[]>(this.urlBase + pId))
+  }
+
+
   getByDni(pDni: string) {
     const obj = { dni: pDni }
     return firstValueFrom(
-      this.httpClient.post<any>(this.urlBase + 'dni', obj))
-      ;
+      this.httpClient.post<any>(this.urlBase + 'dni', obj));
+
   }
   register(newUser: User) {
     return firstValueFrom(

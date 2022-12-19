@@ -1,45 +1,45 @@
 <nav-operario></nav-operario>
 <div class="container">
-    <h2>MODIFY ID</h2>
-    <div class="col-auto">
-        <form [formGroup]="modifyOrder" class="row y justify-content-center " (ngSubmit)="onSubmit()">
-            <div class="col-7">
-                <label class="form-label">ADDRESSEE</label>
-                <input type="text" class="form-control" formControlName="addressee">
-            </div>
-            <div class="col-7">
-                <label class="form-label">DESCRIPTION</label>
-                <input type="text" class="form-control" formControlName="description">
-            </div>
-            <div class="col-7">
-                <label class="form-label">Nº ITEMS</label>
-                <input type="text" class="form-control" formControlName="n_items">
+  <h2>MODIFY ID</h2>
+  <div class="col-auto">
+    <form [formGroup]="modifyOrder" class="row y justify-content-center " (ngSubmit)="onSubmit()">
+      <div class="col-7">
+        <label class="form-label">ADDRESSEE</label>
+        <input type="text" class="form-control" formControlName="addressee">
+      </div>
+      <div class="col-7">
+        <label class="form-label">DESCRIPTION</label>
+        <input type="text" class="form-control" formControlName="description">
+      </div>
+      <div class="col-7">
+        <label class="form-label">Nº ITEMS</label>
+        <input type="text" class="form-control" formControlName="n_items">
 
-            </div>
-            <div class="col-7">
-                <label class="form-label">DESTINATION ADDRESS</label>
-                <input type="text" class="form-control" formControlName="destination_address">
-            </div>
-            <div class="col-7">
-                <label class="form-label">TRUCK PLATE</label>
-                <input type="text" class="form-control" formControlName="truck_plate">
-            </div>
-            <div class="col-7">
-                <label class="form-label">DEPARTURE DATE</label>
-                <input type="date" class="form-control" formControlName="departure_date">
-            </div>
-            <div class="col-7">
-                <label class="form-label">ARRIVAL DATE</label>
-                <input type="date" class="form-control" formControlName="arrival_date">
-            </div>
+      </div>
+      <div class="col-7">
+        <label class="form-label">DESTINATION ADDRESS</label>
+        <input type="text" class="form-control" formControlName="destination_address">
+      </div>
+      <div class="col-7">
+        <label class="form-label">TRUCK PLATE</label>
+        <input type="text" class="form-control" formControlName="truck_plate">
+      </div>
+      <div class="col-7">
+        <label class="form-label">DEPARTURE DATE</label>
+        <input type="date" class="form-control" formControlName="departure_date">
+      </div>
+      <div class="col-7">
+        <label class="form-label">ARRIVAL DATE</label>
+        <input type="date" class="form-control" formControlName="arrival_date">
+      </div>
 
-            <div class="col-6">
-                <button class="btn btn-danger m-3" (click)="deleteClick()">Delete</button>
-            </div>
-            <div class="col-6">
-                <input type="submit" value="Send" [disabled]="!modifyOrder.valid" class="btn btn-info m-3" [ngClass]="{
+      <div class="col-6">
+        <button class="btn btn-danger m-3" (click)="deleteClick()">Delete</button>
+      </div>
+      <div class="col-6">
+        <input type="submit" value="Send" [disabled]="!modifyOrder.valid" class="btn btn-info m-3" [ngClass]="{
                 'btn-danger': !modifyOrder.valid}">
-            </div>
-        </form>
-    </div>
+      </div>
+    </form>
+  </div>
 </div>
