@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { OrderService } from 'src/app/services/order.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import * as dayjs from 'dayjs';
 
 @Component({
   selector: 'app-id-modify',
@@ -31,8 +32,16 @@ export class IdModifyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.rutaSub = this.router.params.subscribe(params => {
+    this.rutaSub = this.router.params.subscribe(async (params) => {
       this.nId = params['id'];
+      const [modOrder] = await this.orderService.getById(this.nId);
+      this.modifyOrder.get('addressee')?.setValue(modOrder.addressee);
+      this.modifyOrder.get('description')?.setValue(modOrder.description);
+      this.modifyOrder.get('n_items')?.setValue(modOrder.n_items);
+      this.modifyOrder.get('destination_address')?.setValue(modOrder.destination_address);
+      this.modifyOrder.get('truck_plate')?.setValue(modOrder.truck_plate);
+      this.modifyOrder.get('departure_date')?.setValue(dayjs(modOrder.departure_date).format('YYYY-MM-DD'));
+      this.modifyOrder.get('arrival_date')?.setValue(dayjs(modOrder.arrival_date).format('YYYY-MM-DD'));
     });
   }
 

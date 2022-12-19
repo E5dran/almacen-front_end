@@ -1,39 +1,35 @@
 <nav-operario></nav-operario>
 <div class="container">
-    <h2>Mis Pedidos</h2>
+  <h2>Mis Pedidos</h2>
 
-    <table class="table table-sm">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Warehouse Id</th>
-                <th>Status</th>
-                <th>Addressee</th>
-                <th>Description</th>
-                <th>Nª Items</th>
-                <th>Destination Address</th>
-                <th>Creation Date</th>
-                <th>Departure Date</th>
-                <th>Arrival Date</th>
-                <th>Truck Plate</th>
-                <th>Category</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            <tr *ngFor="let order of arrOrders">
-                <td>{{order.id}}</td>
-                <td>{{order.warehouse_id}}</td>
-                <td>{{order.status}}</td>
-                <td>{{order.addressee}}</td>
-                <td>{{order.description}}</td>
-                <td>{{order.n_items}}</td>
-                <td>{{order.destination_address}}</td>
-                <td>{{order.creation_date | date: 'shortDate'}}</td>
-                <td>{{order.departure_date | date: 'shortDate'}}</td>
-                <td>{{order.arrival_date | date: 'shortDate'}}</td>
-                <td>{{order.truck_plate}}</td>
-                <td>{{order.category}}</td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Addressee</th>
+        <th>Description</th>
+        <th>Nª Items</th>
+        <th>Destination Address</th>
+        <th>Creation Date</th>
+        <th>Departure Date</th>
+        <th>Arrival Date</th>
+        <th>Truck Plate</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let order of arrOrders">
+        <td>{{order.id}}</td>
+        <td>{{order.addressee}}</td>
+        <td>{{order.description}}</td>
+        <td>{{order.n_items}}</td>
+        <td>{{order.destination_address}}</td>
+        <td>{{order.creation_date | date: 'shortDate'}}</td>
+        <td>{{order.departure_date | date: 'shortDate'}}</td>
+        <td>{{order.arrival_date | date: 'shortDate'}}</td>
+        <td>{{order.truck_plate}}</td>
+        <td>{{order.category}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

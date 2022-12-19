@@ -1,11 +1,7 @@
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .table {
-    overflow: scroll;
-}
-
-.table tbody tr {
-    cursor: pointer;
+  overflow: scroll;
 }
