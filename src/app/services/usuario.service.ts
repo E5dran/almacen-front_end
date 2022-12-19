@@ -20,7 +20,7 @@ export class UsuarioService {
   }
   getByDni(pDni: string): Promise<User[]> {
     return firstValueFrom(
-      this.httpClient.get<User[]>(this.urlBase + pDni)
+      this.httpClient.get<User[]>(this.urlBase + pDni) /* cambiar */
     );
   }
   register(newUser: User) {
@@ -44,4 +44,8 @@ export class UsuarioService {
       this.httpClient.post<any>(this.urlBase + 'login', user)
     );
   }
+
+
+
+
 }

@@ -1,10 +1,10 @@
 <nav-jefe></nav-jefe>
 <div class="container">
     <h2>Warehouses</h2>
-    <form class="d-flex p-5" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
-        <button class="btn btn-outline-success" type="submit">SEARCH</button>
-    </form>
+    <div class="d-flex p-5" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar" [(ngModel)]="word">
+        <button class="btn btn-outline-success" type="submit" (click)="searchName(word)">SEARCH</button>
+    </div>
     <table class="table table-sm">
         <thead>
             <tr>

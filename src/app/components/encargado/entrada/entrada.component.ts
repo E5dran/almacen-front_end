@@ -28,6 +28,8 @@ export class EntradaComponent implements OnInit {
 
   async ngOnInit() {
     const warehouseId = localStorage.getItem('warehouse')
+    this.nombre = localStorage.getItem('nombre')!
+    this.apellido = localStorage.getItem('apellido')!
     const intValue = parseInt(warehouseId!)
     this.warehouse = intValue
     this.orders = await this.orderService.getByWarehouseIdStatusCat(this.warehouse, 1, 'e')

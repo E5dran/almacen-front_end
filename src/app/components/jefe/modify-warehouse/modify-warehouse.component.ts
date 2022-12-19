@@ -10,10 +10,12 @@ import { WarehouseService } from 'src/app/services/warehouse.service';
 })
 export class ModifyWarehouseComponent implements OnInit {
 
+  word: string;
   arrModwarehouse: Warehouse[];
 
 
   constructor(private warehouseService: WarehouseService, private router: Router) {
+    this.word = '';
     this.arrModwarehouse = [];
   }
 
@@ -21,6 +23,13 @@ export class ModifyWarehouseComponent implements OnInit {
     this.arrModwarehouse = await this.warehouseService.getAll()
     this.router.navigate(['/jefe', 'warehouse', 'modify']);
   }
+
+
+  async searchName(pName: string) {
+    const response = await this.warehouseService.getByWarehouseName(pName)
+    console.log(response);
+  };
+
 
 }
 

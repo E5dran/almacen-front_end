@@ -22,10 +22,9 @@ export class OrderModifyComponent implements OnInit {
   }
 
   async searchName(pName: string) {
-    const response = await this.orderService.getByOrderClient(this.word)
-    console.log(this.word);
+    const response = await this.orderService.getByOrderClient(pName)
+    this.arrModOrder = response;
     console.log(response);
-
   };
 
 

@@ -15,10 +15,11 @@ export class WarehouseModifyIdComponent implements OnInit {
 
   nId: number;
   private rutaSub: Subscription;
+  word: string;
 
   constructor(private warehouseService: WarehouseService, private router: ActivatedRoute, private routerLink: Router) {
 
-
+    this.word = '';
     this.formulario = new FormGroup({
       id: new FormControl(),
       name: new FormControl(),
@@ -51,4 +52,11 @@ export class WarehouseModifyIdComponent implements OnInit {
   ngOnDestroy() {
     this.rutaSub.unsubscribe();
   }
+
+
+  async searchName(pName: string) {
+    const response = await this.warehouseService.getByWarehouseName(this.word)
+    window.location.reload();
+  };
+
 }

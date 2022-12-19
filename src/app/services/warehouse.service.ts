@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Warehouse } from '../interfaces/warehouse.interface';
@@ -39,8 +39,16 @@ export class WarehouseService {
     );
   }
 
-  getByWarehouseName(pName: string): Promise<Warehouse[]> {
+  getByWarehouseName(pName: any) {
+    // const httpOptions: Object = {
+    //   headers: new HttpHeaders(
+    //     { pName }
+    //   ),
+    //   responseType: 'text'
+    // }
+
+    const obj = { name: pName }
     return firstValueFrom(
-      this.httpClient.get<Warehouse[]>(this.urlBase + pName))
+      this.httpClient.post<any>(this.urlBase + 'name/', obj))
   }
 }

@@ -72,8 +72,10 @@ export class OrderService {
     );
   }
 
-  getByOrderClient(pName: string): Promise<Order[]> {
+  getByOrderClient(addressee: string) {
+    const orderAddressee = { addressee }
     return firstValueFrom(
-      this.httpClient.get<Order[]>(this.urlBase + pName))
+      this.httpClient.post<any>(this.urlBase + 'addressee/', orderAddressee)
+    )
   }
 }
