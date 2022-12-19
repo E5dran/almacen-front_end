@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import jwt_decode from "jwt-decode";
 
 
 @Component({
@@ -47,23 +48,23 @@ export class LoginComponent implements OnInit {
   async onSubmit() {
     const response = await this.userService.login(this.formularioLogin.value);
 
-    //console.log(this.formularioLogin.value, response, response.category, response.warehouse_id, response.id);
+    const tokenInfo = jwt_decode(response.token) as any;
 
     if (response.success) {
       localStorage.setItem('token', response.token);
 
-      if (response.category === 'jefe') {
+      if (tokenInfo.user_role === 'jefe') {
 
         this.router.navigate(['/jefe', 'overview']);
 
-      } else if (response.category === 'encargado') {
-        localStorage.setItem('warehouse', response.warehouse_id);
+      } else if (tokenInfo.user_role === 'encargado') {
+
         this.router.navigate(['/encargado', 'overview']);
 
-      } else if (response.category === 'operario') {
-        localStorage.setItem('warehouse', response.warehouse_id);
-        localStorage.setItem('user', response.id);
+      } else if (tokenInfo.user_role === 'operario') {
+
         this.router.navigate(['/operario', 'overview']);
+
       }
     } else { alert(response.fatal) };
   }
