@@ -38,4 +38,9 @@ export class WarehouseService {
       this.httpClient.delete<any>(this.urlBase + WarehouseId)
     );
   }
+
+  getByWarehouseName(pName: string): Promise<Warehouse[]> {
+    return firstValueFrom(
+      this.httpClient.get<Warehouse[]>(this.urlBase + pName))
+  }
 }

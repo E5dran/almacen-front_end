@@ -71,4 +71,9 @@ export class OrderService {
       this.httpClient.put<any>(this.urlBase + orderId + '/arrivalDate', fech)
     );
   }
+
+  getByOrderClient(pName: string): Promise<Order[]> {
+    return firstValueFrom(
+      this.httpClient.get<Order[]>(this.urlBase + pName))
+  }
 }
