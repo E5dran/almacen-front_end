@@ -9,4 +9,11 @@ h2 {
 
 .table {
   overflow: scroll;
+  position: relative;
+}
+
+.table th {
+  position: sticky;
+  background-color: white;
+  top: 0;
 }

@@ -14,3 +14,9 @@ h2 {
 .table tbody tr {
   cursor: pointer;
 }
+
+.table th {
+  position: sticky;
+  background-color: white;
+  top: 0;
+}
