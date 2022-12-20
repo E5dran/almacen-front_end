@@ -4,6 +4,12 @@
     <div class="col-auto">
         <form [formGroup]="createOrder" class="row y justify-content-center " (ngSubmit)="onSubmit()">
             <div class="col-7">
+                <label class="form-label">DESTINATION WAREHOUSE</label>
+                <select type="text" class="form-select" formControlName="destination_wh_id">
+                    <option *ngFor="let warehouse of warehouses" [value]="warehouse.id">{{warehouse.name}}</option>
+                </select>
+            </div>
+            <div class="col-7">
                 <label class="form-label">ADDRESSEE</label>
                 <input type="text" class="form-control" formControlName="addressee">
             </div>
@@ -14,7 +20,6 @@
             <div class="col-7">
                 <label class="form-label">Nº ITEMS</label>
                 <input type="text" class="form-control" formControlName="n_items">
-
             </div>
             <div class="col-7">
                 <label class="form-label">DESTINATION ADDRESS</label>

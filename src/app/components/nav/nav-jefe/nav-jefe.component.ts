@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import jwt_decode from "jwt-decode";
 
 @Component({
   selector: 'nav-jefe',
@@ -11,7 +12,7 @@ export class NavJefeComponent implements OnInit {
   sidebarWidth: string;
   activo: boolean;
   inactivo: boolean;
-  nombreEncargado: string
+  nombre: string
 
   color: string;
   backgroundColor: string;
@@ -20,13 +21,17 @@ export class NavJefeComponent implements OnInit {
     this.sidebarWidth = '0px';
     this.activo = false;
     this.inactivo = true;
-    this.nombreEncargado = 'Oscar';
+    this.nombre = '';
 
     this.backgroundColor = 'rgb(6, 78, 75)';
     this.color = 'white';
   }
 
   ngOnInit(): void {
+
+    const tokenInfo = jwt_decode(localStorage.getItem('token')!) as any;
+
+    this.nombre = tokenInfo.user_name;
 
     if (window.innerWidth <= 768) {
       this.sidebarWidth = '50px';

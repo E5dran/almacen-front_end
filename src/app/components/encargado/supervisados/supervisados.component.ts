@@ -1,34 +1,33 @@
 import { Component, OnInit, } from '@angular/core';
 import { Order } from 'src/app/interfaces/order.interface';
 import { OrderService } from 'src/app/services/order.service';
+import jwt_decode from "jwt-decode";
+
 @Component({
   selector: 'app-supervisados',
   templateUrl: './supervisados.component.html',
   styleUrls: ['./supervisados.component.css']
 })
 export class SupervisadosComponent implements OnInit {
-  nombre: string
-  apellido: string
-  fecha: Date
-  orders: Order[]
-  warehouse: number | null
+  nombre: string;
+  fecha: Date;
+  orders: Order[];
+  warehouse: number;
 
   constructor(private orderService: OrderService) {
-    this.orders = []
-    this.nombre = 'Juan'
-    this.apellido = 'Perez'
-    this.fecha = new Date()
-    this.warehouse = 0
+    this.orders = [];
+    this.nombre = '';
+    this.fecha = new Date();
+    this.warehouse = 0;
 
   }
 
   async ngOnInit() {
-    const warehouseId = localStorage.getItem('warehouse')
-    this.nombre = localStorage.getItem('nombre')!
-    this.apellido = localStorage.getItem('apellido')!
-    const intValue = parseInt(warehouseId!)
-    this.warehouse = intValue
-    this.orders = await this.orderService.getByWarehouseIdStatus(this.warehouse, 1)
+    const tokenInfo = jwt_decode(localStorage.getItem('token')!) as any;
+
+    this.nombre = tokenInfo.user_name;
+    this.warehouse = tokenInfo.warehouse_id;
+    this.orders = await this.orderService.getByWarehouseIdStatus(this.warehouse!, 1)
   }
 
 
