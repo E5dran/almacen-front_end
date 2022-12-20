@@ -12,6 +12,6 @@ export interface Order {
     arrival_date: Date,
     truck_plate: string,
     category: string,
-    user_id: string
-
+    user_id: number,
+    destination_wh_id: number
 }

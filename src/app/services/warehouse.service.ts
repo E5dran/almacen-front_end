@@ -40,13 +40,6 @@ export class WarehouseService {
   }
 
   getByWarehouseName(pName: any) {
-    // const httpOptions: Object = {
-    //   headers: new HttpHeaders(
-    //     { pName }
-    //   ),
-    //   responseType: 'text'
-    // }
-
     const obj = { name: pName }
     return firstValueFrom(
       this.httpClient.post<any>(this.urlBase + 'name/', obj))

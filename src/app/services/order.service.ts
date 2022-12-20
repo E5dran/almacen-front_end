@@ -58,17 +58,24 @@ export class OrderService {
     );
   }
 
-  updateFechaSalida(orderId: number, fecha: Date) {
+  updateDepartureDate(orderId: number, fecha: Date) {
     const fech = { fecha }
     return firstValueFrom(
       this.httpClient.put<any>(this.urlBase + orderId + '/departureDate', fech)
     );
   }
 
-  updateFechaLlegada(orderId: number, fecha: Date) {
+  updateArrivalDate(orderId: number, fecha: Date) {
     const fech = { fecha }
     return firstValueFrom(
       this.httpClient.put<any>(this.urlBase + orderId + '/arrivalDate', fech)
+    );
+  }
+
+  updateWarehouseId(orderId: number, warehouseId: number) {
+    const obj = { warehouse_id: warehouseId }
+    return firstValueFrom(
+      this.httpClient.put<any>(this.urlBase + orderId + '/warehouseId', obj)
     );
   }
 
