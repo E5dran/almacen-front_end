@@ -1,7 +1,8 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/interfaces/order.interface';
 import { OrderService } from 'src/app/services/order.service';
-import { Router } from '@angular/router';
+import jwt_decode from "jwt-decode";
+
 @Component({
   selector: 'app-entrada',
   templateUrl: './entrada.component.html',
@@ -9,45 +10,44 @@ import { Router } from '@angular/router';
 })
 export class EntradaComponent implements OnInit {
 
-  orders: Order[]
+  orders: Order[];
   nombre: string;
-  apellido: string;
   fecha: Date;
-  sendOrders: Order[]
-  warehouse: number | null
+  sendOrders: Order[];
+  warehouse: number;
 
-  constructor(private orderService: OrderService, private router: Router) {
-    this.nombre = '',
-      this.apellido = '',
-      this.fecha = new Date(),
-      this.orders = []
-    this.sendOrders = []
-    this.warehouse = 0
-
+  constructor(private orderService: OrderService) {
+    this.nombre = '';
+    this.fecha = new Date();
+    this.orders = [];
+    this.sendOrders = [];
+    this.warehouse = 0;
   }
 
   async ngOnInit() {
-    const warehouseId = localStorage.getItem('warehouse')
-    this.nombre = localStorage.getItem('nombre')!
-    this.apellido = localStorage.getItem('apellido')!
-    const intValue = parseInt(warehouseId!)
-    this.warehouse = intValue
-    this.orders = await this.orderService.getByWarehouseIdStatusCat(this.warehouse, 1, 'e')
+
+    const tokenInfo = jwt_decode(localStorage.getItem('token')!) as any;
+
+    this.nombre = tokenInfo.user_name;
+    this.warehouse = tokenInfo.warehouse_id;
+    this.orders = await this.orderService.getByWarehouseIdStatusCat(this.warehouse!, 0, 'e');
+
+    if (this.orders.length === 0) {
+      confirm("No tienes pedidos pendientes de revisar");
+    }
   }
 
   onCheckboxChange(orderId: number) {
-    this.sendOrders.push(this.orders.find(order => order.id === orderId)!)
-    console.log(this.sendOrders)
+    this.sendOrders.push(this.orders.find(order => order.id === orderId)!);
   }
 
-  async updateStatus(pArray: Order[]) {
+  async updateStatus() {
     const currentdate = new Date();
     const letra = 'a'
     for (let order of this.sendOrders) {
-      const orderId = order.id
-      const response2 = await this.orderService.updateStatus(orderId, letra)
-      const response = await this.orderService.updateFechaLlegada(orderId, currentdate)
-      console.log(response, response2, currentdate)
+      const orderId = order.id;
+      await this.orderService.updateStatus(orderId, letra);
+      await this.orderService.updateArrivalDate(orderId, currentdate);
       window.location.reload();
     }
   }
