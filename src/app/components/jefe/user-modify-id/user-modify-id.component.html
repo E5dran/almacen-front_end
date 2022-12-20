@@ -3,35 +3,31 @@
   <h2>User Modify</h2>
   <div class="col-auto">
     <form [formGroup]="formulario" class="row y justify-content-center " (ngSubmit)="onSubmit()">
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">Name</label>
         <input type="text" class="form-control" formControlName="name">
       </div>
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">surname</label>
         <input type="text" class="form-control" formControlName="surname">
       </div>
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">Email</label>
         <input type="email" class="form-control" formControlName="email">
       </div>
-      <div class="col-10">
-        <label class="form-label">password</label>
-        <input type="text" class="form-control" formControlName="password">
-      </div>
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">Phone</label>
         <input type="text" class="form-control" formControlName="phone">
       </div>
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">Adress</label>
         <input type="text" class="form-control" formControlName="adress">
       </div>
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">DNI</label>
         <input type="text" class="form-control" formControlName="dni">
       </div>
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">gender</label>
         <select class="form-select" formControlName="gender">
           <option selected hidden></option>
@@ -41,7 +37,7 @@
           <option value="n/d">no quiero contestar</option>
         </select>
       </div>
-      <div class="col-10">
+      <div class="col-12">
         <label class="form-label">Categoría</label>
         <select class="form-select" formControlName="category">
           <option selected hidden></option>
@@ -49,9 +45,14 @@
           <option value="encargado">encargado</option>
         </select>
       </div>
-      <div class="col-4">
+      <div class="col-12">
+        <label class="form-label">Warehouse</label>
+        <select class="form-select" formControlName="warehouse_id">
+          <option [value]="warehouse.id" *ngFor="let warehouse of warehouses">{{warehouse.id}}</option>
+        </select>
+      </div>
+      <div class="col-4 ">
         <button class="btn btn-danger m-3" (click)="deleteClick()">Delete</button>
-
         <input type="submit" value="Send" [disabled]="!formulario.valid" class="btn btn-info m-3" [ngClass]="{'btn-danger': !formulario.valid}">
       </div>
     </form>

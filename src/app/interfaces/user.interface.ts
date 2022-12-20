@@ -11,6 +11,7 @@ export interface User {
   gender: string;
   status: string;
   category: string;
+  warehouse_id: number;
 
 
 }

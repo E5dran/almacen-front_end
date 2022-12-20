@@ -1,14 +1,11 @@
 <nav-jefe></nav-jefe>
 <div class="container">
   <h2>Crear usuario</h2>
-
-
   <div class="col-auto">
     <form [formGroup]="formulario" class="row y justify-content-center" (ngSubmit)="onSubmit()">
       <div class="col-11">
         <label class="form-label">Name</label>
         <input type="text" class="form-control" formControlName="name">
-
       </div>
       <div class="col-11">
         <label class="form-label">Surname</label>
@@ -21,14 +18,11 @@
       <div class="col-11">
         <label class="form-label">Password</label>
         <input type="text" class="form-control" formControlName="password">
-
       </div>
       <div class="col-11">
         <label class="form-label">Phone</label>
         <input type="email" class="form-control" formControlName="phone">
-
       </div>
-
       <div class="col-11">
         <label class="form-label">Adress</label>
         <input type="email" class="form-control" formControlName="adress">
@@ -51,9 +45,14 @@
         <label class="form-label">Categoría</label>
         <select class="form-select" formControlName="category">
           <option selected hidden></option>
-
           <option value="operario">operario</option>
           <option value="encargado">encargado</option>
+        </select>
+      </div>
+      <div class="col-11">
+        <label class="form-label">Warehouses</label>
+        <select class="form-select" formControlName="warehouse_id">
+          <option [value]="warehouse.id" *ngFor="let warehouse of warehouses">{{warehouse.name}}</option>
         </select>
       </div>
       <div class="col-2 mt-3">

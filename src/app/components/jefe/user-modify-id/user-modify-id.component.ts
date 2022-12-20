@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Warehouse } from 'src/app/interfaces/warehouse.interface';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { WarehouseService } from 'src/app/services/warehouse.service';
 
 @Component({
   selector: 'app-user-modify-id',
@@ -12,11 +14,12 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class UserModifyIdComponent implements OnInit {
 
   formulario: FormGroup;
+  warehouses: Warehouse[];
 
   nId: number;
   private rutaSub: Subscription;
 
-  constructor(private userService: UsuarioService, private router: ActivatedRoute, private routerLink: Router) {
+  constructor(private userService: UsuarioService, private router: ActivatedRoute, private routerLink: Router, private warehouseService: WarehouseService) {
     this.formulario = new FormGroup({
       name: new FormControl(),
       surname: new FormControl(),
@@ -27,12 +30,14 @@ export class UserModifyIdComponent implements OnInit {
       dni: new FormControl(),
       gender: new FormControl(),
       category: new FormControl(),
+      warehouse_id: new FormControl()
     });
     this.nId = 0;
     this.rutaSub = new Subscription;
+    this.warehouses = [];
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.rutaSub = this.router.params.subscribe(async (params) => {
       this.nId = params['id'];
       const [modUser] = await this.userService.getById(this.nId);
@@ -45,11 +50,13 @@ export class UserModifyIdComponent implements OnInit {
       this.formulario.get('dni')?.setValue(modUser.dni);
       this.formulario.get('gender')?.setValue(modUser.gender);
       this.formulario.get('category')?.setValue(modUser.category);
+      this.formulario.get('warehouse_id')?.setValue(modUser.warehouse_id);
     });
+    this.warehouses = await this.warehouseService.getAll();
   }
 
   async onSubmit() {
-    const response = await this.userService.modify(this.formulario.value, this.nId);
+    await this.userService.modify(this.formulario.value, this.nId);
     this.routerLink.navigate(['/jefe', 'user', 'modify']);
   }
 

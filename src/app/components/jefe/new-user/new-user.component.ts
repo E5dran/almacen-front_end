@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { pipe } from 'rxjs';
-import { debounceTime } from 'rxjs';
-import { User } from 'src/app/interfaces/user.interface';
+import { Warehouse } from 'src/app/interfaces/warehouse.interface';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { WarehouseService } from 'src/app/services/warehouse.service';
 
 @Component({
   selector: 'new-user',
@@ -14,8 +13,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class NewUserComponent implements OnInit {
 
   formulario: FormGroup;
+  warehouses: Warehouse[];
 
-  constructor(private userService: UsuarioService, private router: Router) {
+  constructor(private userService: UsuarioService, private router: Router, private warehouseService: WarehouseService) {
     this.formulario = new FormGroup({
       name: new FormControl(),
       surname: new FormControl(),
@@ -26,9 +26,12 @@ export class NewUserComponent implements OnInit {
       dni: new FormControl(),
       gender: new FormControl(),
       category: new FormControl(),
+      warehouse_id: new FormControl()
     })
+    this.warehouses = [];
   }
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.warehouses = await this.warehouseService.getAll();
   }
 
   async onSubmit() {
