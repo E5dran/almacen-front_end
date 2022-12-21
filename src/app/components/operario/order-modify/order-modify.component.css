@@ -4,11 +4,12 @@ h2 {
 
 .overflow-scroll {
   overflow: scroll;
-  height: 500px;
+  height: 600px;
 }
 
 .table {
   overflow: scroll;
+  position: relative;
 }
 
 .table tbody tr {
