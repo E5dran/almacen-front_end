@@ -22,6 +22,18 @@ export class OrderModifyComponent implements OnInit {
     this.arrModOrder = await this.orderService.getAll();
   }
 
+
+
+  async onKey(event: any) {
+    this.word = event.target.value;
+    if (this.word === '') {
+      this.arrModOrder = await this.orderService.getAll();
+      return;
+    } else {
+      this.arrModOrder = await this.orderService.getByOrderClient(this.word)
+    }
+  };
+
   async searchName(pName: string) {
     if (pName === '') {
       this.arrModOrder = await this.orderService.getAll();
