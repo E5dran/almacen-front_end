@@ -6,30 +6,52 @@
       <div class="col-11">
         <label class="form-label">NOMBRE</label>
         <input type="text" class="form-control" formControlName="name">
+        <p class="error" *ngIf="formulario.get('name')?.hasError('required') && formulario.get('name')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-11">
         <label class="form-label">APELLIDO</label>
         <input type="text" class="form-control" formControlName="surname">
+        <p class="error" *ngIf="formulario.get('surname')?.hasError('required') && formulario.get('surname')?.touched">
+          El
+          campo es requerido</p>
       </div>
       <div class="col-11">
         <label class="form-label">EMAIL</label>
         <input type="email" class="form-control" formControlName="email">
+        <p class="error" *ngIf="formulario.get('email')?.hasError('required') && formulario.get('email')?.touched">El
+          campo es requerido</p>
+        <p class="error" *ngIf="checkError('email','pattern')">Debe tener un formato correcto</p>
       </div>
       <div class="col-11">
         <label class="form-label">CONTRASEÑA</label>
         <input type="text" class="form-control" formControlName="password">
+        <p class="error"
+          *ngIf="formulario.get('password')?.hasError('required') && formulario.get('password')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-11">
         <label class="form-label">TELÉFONO</label>
         <input type="email" class="form-control" formControlName="phone">
+        <p class="error" *ngIf="formulario.get('phone')?.hasError('required') && formulario.get('phone')?.touched">El
+          campo es requerido</p>
+        <p class="error" *ngIf="checkError('phone','minlength')">
+          El campo telefono debe tener minimo 9 numeros
+        </p>
       </div>
       <div class="col-11">
         <label class="form-label">DIRECCIÓN</label>
         <input type="email" class="form-control" formControlName="adress">
+        <p class="error" *ngIf="formulario.get('adress')?.hasError('required') && formulario.get('adress')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-11">
         <label class="form-label">DNI</label>
         <input type="dni" class="form-control" formControlName="dni">
+        <p class="error" *ngIf="formulario.get('dni')?.hasError('required') && formulario.get('dni')?.touched">El
+          campo es requerido</p>
+        <p class="error" *ngIf="checkError('dni','dniValidator')">
+          {{formulario.get('dni')?.errors?.['dnivalidator']}}</p>
       </div>
       <div class="col-11">
         <label class="form-label">GÉNERO</label>
@@ -40,6 +62,8 @@
           <option value="other">Otro</option>
           <option value="n/d">Prefiero no responder</option>
         </select>
+        <p class="error" *ngIf="formulario.get('gender')?.hasError('required') && formulario.get('gender')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-11">
         <label class="form-label">CATEGORÍA</label>
@@ -48,12 +72,18 @@
           <option value="operario">Operario</option>
           <option value="encargado">Encargado</option>
         </select>
+        <p class="error"
+          *ngIf="formulario.get('category')?.hasError('required') && formulario.get('category')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-11">
         <label class="form-label">ALMACENES</label>
         <select class="form-select" formControlName="warehouse_id">
           <option [value]="warehouse.id" *ngFor="let warehouse of warehouses">{{warehouse.name}}</option>
         </select>
+        <p class="error"
+          *ngIf="formulario.get('warehouse_id')?.hasError('required') && formulario.get('warehouse_id')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-2 mt-3">
         <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-info" [ngClass]="{
