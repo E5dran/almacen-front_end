@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WarehouseService } from 'src/app/services/warehouse.service';
 
@@ -14,9 +14,8 @@ export class NewWarehouseComponent implements OnInit {
 
   constructor(private warehouseService: WarehouseService, private router: Router) {
     this.formulario = new FormGroup({
-      name: new FormControl(),
-      address: new FormControl()
-
+      name: new FormControl('', [Validators.required]),
+      address: new FormControl('', [Validators.required])
     })
   }
   ngOnInit(): void {
@@ -27,6 +26,9 @@ export class NewWarehouseComponent implements OnInit {
     this.router.navigate(['/jefe', 'warehouse', 'modify']);
   }
 
+  checkError(pGet: string, pError: string): boolean | undefined {
+    return this.formulario.get(pGet)?.hasError(pError) && this.formulario.get(pGet)?.touched
+  }
 }
 
 

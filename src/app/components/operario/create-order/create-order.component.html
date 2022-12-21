@@ -8,26 +8,38 @@
         <select type="text" class="form-select" formControlName="destination_wh_id">
           <option *ngFor="let warehouse of warehouses" [value]="warehouse.id">{{warehouse.name}}</option>
         </select>
+        <p class="error" *ngIf="createOrder.get('destination_wh_id')?.hasError('required') && createOrder.get('destination_wh_id')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-7">
         <label class="form-label">DESTINATARIO</label>
         <input type="text" class="form-control" formControlName="addressee">
+        <p class="error" *ngIf="createOrder.get('addressee')?.hasError('required') && createOrder.get('addressee')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-7">
         <label class="form-label">DESCRIPCIÓN</label>
         <input type="text" class="form-control" formControlName="description">
+        <p class="error" *ngIf="createOrder.get('description')?.hasError('required') && createOrder.get('description')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-7">
         <label class="form-label">Nº DE BULTOS</label>
         <input type="text" class="form-control" formControlName="n_items">
+        <p class="error" *ngIf="createOrder.get('n_items')?.hasError('required') && createOrder.get('n_items')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-7">
         <label class="form-label">DIRECCIÓN DE DESTINO</label>
         <input type="text" class="form-control" formControlName="destination_address">
+        <p class="error" *ngIf="createOrder.get('destination_address')?.hasError('required') && createOrder.get('destination_address')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-7">
         <label class="form-label">MATRÍCULA DE CAMIÓN</label>
         <input type="text" class="form-control" formControlName="truck_plate">
+        <p class="error" *ngIf="createOrder.get('truck_plate')?.hasError('required') && createOrder.get('truck_plate')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-7">
         <label class="form-label">FECHA DE SALIDA</label>

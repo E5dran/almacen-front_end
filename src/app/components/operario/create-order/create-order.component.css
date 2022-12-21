@@ -13,3 +13,16 @@ button {
     color: white;
     width: 6em;
 }
+
+.error {
+    font-size: 14px;
+    color: lightcoral;
+}
+
+input.ng-valid.ng-touched {
+    border: 2px solid lightgreen;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid lightcoral;
+}

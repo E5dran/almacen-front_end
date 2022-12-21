@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
 import jwt_decode from "jwt-decode";
@@ -18,16 +18,16 @@ export class CreateOrderComponent implements OnInit {
 
   constructor(private orderService: OrderService, private router: Router, private warehouseService: WarehouseService) {
     this.createOrder = new FormGroup({
-      addressee: new FormControl(),
-      description: new FormControl(),
-      n_items: new FormControl(),
-      destination_address: new FormControl(),
-      truck_plate: new FormControl(),
+      addressee: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+      n_items: new FormControl('', [Validators.required]),
+      destination_address: new FormControl('', [Validators.required]),
+      truck_plate: new FormControl('', [Validators.required]),
       departure_date: new FormControl(),
       arrival_date: new FormControl(),
       warehouse_id: new FormControl(),
       user_id: new FormControl(),
-      destination_wh_id: new FormControl()
+      destination_wh_id: new FormControl('', [Validators.required])
     });
     this.warehouses = [];
   }

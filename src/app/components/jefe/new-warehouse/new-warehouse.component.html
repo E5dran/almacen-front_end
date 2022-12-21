@@ -9,10 +9,14 @@
       <div class="col-12">
         <label class="form-label">NOMBRE</label>
         <input type="text" class="form-control" formControlName="name">
+        <p class="error" *ngIf="formulario.get('name')?.hasError('required') && formulario.get('name')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-12">
         <label class="form-label">DIRECCIÓN</label>
         <input type="text" class="form-control" formControlName="address">
+        <p class="error" *ngIf="formulario.get('address')?.hasError('required') && formulario.get('address')?.touched">El
+          campo es requerido</p>
       </div>
       <div class="col-2 mt-3">
         <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-info" [ngClass]="{
