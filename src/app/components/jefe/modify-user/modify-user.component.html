@@ -2,9 +2,7 @@
 <div class="container">
   <h2>USUARIOS</h2>
   <div class="d-flex p-5" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar" [(ngModel)]="dni"
-      (keyup)="onKey($event)">
-    <button class="btn btn-outline-success" type="submit" (click)="searchUserDni(dni)">SEARCH</button>
+    <input class="form-control me-2" type="search" placeholder="Buscar por DNI" aria-label="Buscar" [(ngModel)]="dni" (keyup)="onKey($event)">
   </div>
   <div class="overflow-scroll">
     <table class="table table-sm">

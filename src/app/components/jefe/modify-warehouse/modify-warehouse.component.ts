@@ -33,15 +33,6 @@ export class ModifyWarehouseComponent implements OnInit {
     }
   };
 
-
-  async searchName(pName: string) {
-    if (pName === '') {
-      this.arrModwarehouse = await this.warehouseService.getAll()
-    } else {
-      this.arrModwarehouse = await this.warehouseService.getByWarehouseName(pName)
-    }
-
-  }
 };
 
 

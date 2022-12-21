@@ -35,12 +35,4 @@ export class ModifyUserComponent implements OnInit {
     }
   };
 
-
-  async searchUserDni(pDni: string) {
-    if (pDni === '') {
-      this.arrModUser = await this.userService.getAll()
-    } else {
-      this.arrModUser = await this.userService.getByDni(pDni)
-    }
-  }
 }

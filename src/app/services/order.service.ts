@@ -86,8 +86,8 @@ export class OrderService {
     );
   }
 
-  getByOrderClient(addressee: string) {
-    const orderAddressee = { addressee }
+  getByOrderClient(addressee: string, userId: number) {
+    const orderAddressee = { addressee, user_id: userId }
     return firstValueFrom(
       this.httpClient.post<any>(this.urlBase + 'addressee/', orderAddressee)
     )
