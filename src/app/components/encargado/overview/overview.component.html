@@ -1,33 +1,31 @@
 <nav-encargado></nav-encargado>
 <div class="container text-center mx-auto">
-    <div id="nombre.fecha">
-        <div class="nombre">
-            <h2 class="text-center">{{nombre}}</h2>
-        </div>
-        <div class="fecha">
-            <h5 class="text-center">{{fecha | date: 'fullDate'}}</h5>
-        </div>
-
+  <div id="nombre.fecha">
+    <div class="nombre">
+      <h2 class="text-center">{{nombre}}</h2>
     </div>
-
+    <div class="fecha">
+      <h5 class="text-center">{{fecha | date: 'fullDate'}}</h5>
+    </div>
+  </div>
+  <div class="overflow-scroll">
     <table class="table table-sm text-center">
-        <thead class="text-center">
-            <tr>
-
-                <th scope="col">#</th>
-                <th scope="col">CATEGORY</th>
-                <th scope="col">DESCRIPTION</th>
-                <th scope="col">Nº Items</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider text-center">
-            <tr *ngFor="let order of orders">
-                <td>{{order.id}}</td>
-                <td>{{order.category}}</td>
-                <td>{{order.description}}</td>
-                <td>{{order.n_items}}</td>
-
-            </tr>
-        </tbody>
+      <thead class="text-center">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">CATEGORY</th>
+          <th scope="col">DESCRIPTION</th>
+          <th scope="col">Nº Items</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider text-center">
+        <tr *ngFor="let order of orders">
+          <td>{{order.id}}</td>
+          <td>{{order.category}}</td>
+          <td>{{order.description}}</td>
+          <td>{{order.n_items}}</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 </div>

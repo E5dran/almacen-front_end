@@ -1,12 +1,23 @@
 .overflow-scroll {
-    overflow: scroll;
-    height: 400px;
+  overflow: scroll;
+  height: 600px;
+}
+
+.table {
+  overflow: scroll;
+  position: relative;
+}
+
+.table th {
+  position: sticky;
+  background-color: white;
+  top: 0;
 }
 
 #button {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: rgb(6, 78, 75);
-    border: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: rgb(6, 78, 75);
+  border: none;
 }
