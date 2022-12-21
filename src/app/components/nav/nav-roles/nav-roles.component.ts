@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import jwt_decode from "jwt-decode";
+import swal from 'sweetalert2'
 
 @Component({
   selector: 'nav-roles',
@@ -60,9 +61,24 @@ export class NavRolesComponent implements OnInit {
   }
 
   logout() {
-    if (confirm("¿Estás seguro de querer cerrar sesión?")) {
-      localStorage.removeItem('token');
-      this.router.navigate(['/login']);
-    }
+    swal.fire({
+      title: 'Logout',
+      text: "¿Estas seguro de querer cerrar sesión?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#064E4B',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Logout'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swal.fire(
+          'Sesión Cerrada',
+          'Hasta pronto!',
+          'success'
+        )
+        localStorage.removeItem('token');
+        this.router.navigate(['/login']);
+      }
+    })
   }
 }

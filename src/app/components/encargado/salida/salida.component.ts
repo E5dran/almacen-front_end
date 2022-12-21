@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/interfaces/order.interface';
 import { OrderService } from 'src/app/services/order.service';
 import jwt_decode from "jwt-decode";
+import swal from 'sweetalert2'
 
 @Component({
   selector: 'app-salida',
@@ -31,7 +32,11 @@ export class SalidaComponent implements OnInit {
     this.orders = await this.orderService.getByWarehouseIdStatusCat(this.warehouse!, 0, 's');
 
     if (this.orders.length === 0) {
-      confirm("No tienes pedidos pendientes de revisar");
+      swal.fire({
+        title: 'No tienes mas pedidos que validar por ahora',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      })
     }
   }
 
