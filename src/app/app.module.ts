@@ -1,5 +1,3 @@
-
-
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,10 +13,6 @@ import { registerLocaleData } from '@angular/common';
 
 import { NewUserComponent } from './components/jefe/new-user/new-user.component';
 
-import { NavJefeComponent } from './components/nav/nav-jefe/nav-jefe.component';
-import { NavOperarioComponent } from './components/nav/nav-operario/nav-operario.component';
-import { NavEncargadoComponent } from './components/nav/nav-encargado/nav-encargado.component';
-
 import { SalidaComponent } from './components/encargado/salida/salida.component';
 import { JefeoverviewComponent } from './components/jefe/overview/jefeoverview.component';
 import { EntradaComponent } from './components/encargado/entrada/entrada.component';
@@ -33,11 +27,8 @@ import { ModifyUserComponent } from './components/jefe/modify-user/modify-user.c
 import { ModifyWarehouseComponent } from './components/jefe/modify-warehouse/modify-warehouse.component';
 import { UserModifyIdComponent } from './components/jefe/user-modify-id/user-modify-id.component';
 import { WarehouseModifyIdComponent } from './components/jefe/warehouse-modify-id/warehouse-modify-id.component';
-
+import { NavRolesComponent } from './components/nav/nav-roles/nav-roles.component';
 registerLocaleData(localeEs, 'es');
-
-
-
 
 @NgModule({
   declarations: [
@@ -48,9 +39,6 @@ registerLocaleData(localeEs, 'es');
     LoginComponent,
     JefeoverviewComponent,
     NewUserComponent,
-    NavJefeComponent,
-    NavEncargadoComponent,
-    NavOperarioComponent,
     EntradaComponent,
     SupervisadosComponent,
     OperarioOverviewComponent,
@@ -62,7 +50,7 @@ registerLocaleData(localeEs, 'es');
     ModifyWarehouseComponent,
     UserModifyIdComponent,
     WarehouseModifyIdComponent,
-
+    NavRolesComponent
   ],
   imports: [
     BrowserModule,
