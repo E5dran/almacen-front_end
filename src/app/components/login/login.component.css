@@ -4,11 +4,14 @@ h2 {
 }
 
 .container {
-    background-color: rgb(6, 78, 75);
-    color: white;
-
+    background-color: transparent;
+    color: black;
+    height: 40vh;
 }
 
-body {
-    background-color: rgb(6, 78, 75);
+.body {
+    background-image: url('../../../../images/32674301.jpeg');
+    background-size: cover;
+    width: 100vw;
+    height: 90vh;
 }
