@@ -17,3 +17,7 @@ h2 {
   background-color: white;
   top: 0;
 }
+
+.table tbody tr {
+  cursor: pointer;
+}
