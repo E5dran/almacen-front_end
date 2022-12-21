@@ -26,7 +26,6 @@ export class SalidaComponent implements OnInit {
 
   async ngOnInit() {
     const tokenInfo = jwt_decode(localStorage.getItem('token')!) as any;
-
     this.nombre = tokenInfo.user_name;
     this.warehouse = tokenInfo.warehouse_id;
     this.orders = await this.orderService.getByWarehouseIdStatusCat(this.warehouse!, 0, 's');

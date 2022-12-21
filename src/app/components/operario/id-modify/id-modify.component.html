@@ -1,43 +1,43 @@
 <nav-operario></nav-operario>
 <div class="container">
-  <h2>MODIFY ID</h2>
+  <h2>MODIFICAR PEDIDO</h2>
   <div class="col-auto">
     <form [formGroup]="modifyOrder" class="row y justify-content-center " (ngSubmit)="onSubmit()">
       <div class="col-7">
-        <label class="form-label">ADDRESSEE</label>
+        <label class="form-label">DESTINATARIO</label>
         <input type="text" class="form-control" formControlName="addressee">
       </div>
       <div class="col-7">
-        <label class="form-label">DESCRIPTION</label>
+        <label class="form-label">DESCRIPCIÓN</label>
         <input type="text" class="form-control" formControlName="description">
       </div>
       <div class="col-7">
-        <label class="form-label">Nº ITEMS</label>
+        <label class="form-label">Nº DE BULTOS</label>
         <input type="text" class="form-control" formControlName="n_items">
 
       </div>
       <div class="col-7">
-        <label class="form-label">DESTINATION ADDRESS</label>
+        <label class="form-label">DIRECCIÓN DE DESTINO</label>
         <input type="text" class="form-control" formControlName="destination_address">
       </div>
       <div class="col-7">
-        <label class="form-label">TRUCK PLATE</label>
+        <label class="form-label">MATRÍCULA DE CAMIÓN</label>
         <input type="text" class="form-control" formControlName="truck_plate">
       </div>
       <div class="col-7">
-        <label class="form-label">DEPARTURE DATE</label>
+        <label class="form-label">FECHA DE SALIDA</label>
         <input type="date" class="form-control" formControlName="departure_date">
       </div>
       <div class="col-7">
-        <label class="form-label">ARRIVAL DATE</label>
+        <label class="form-label">FECHA DE LLEGADA</label>
         <input type="date" class="form-control" formControlName="arrival_date">
       </div>
 
       <div class="col-6">
-        <button class="btn btn-danger m-3" (click)="deleteClick()">Delete</button>
+        <button class="btn btn-danger m-3" (click)="deleteClick()">Eliminar</button>
       </div>
       <div class="col-6">
-        <input type="submit" value="Send" [disabled]="!modifyOrder.valid" class="btn btn-info m-3" [ngClass]="{
+        <input type="submit" value="Enviar" [disabled]="!modifyOrder.valid" class="btn btn-info m-3" [ngClass]="{
                 'btn-danger': !modifyOrder.valid}">
       </div>
     </form>

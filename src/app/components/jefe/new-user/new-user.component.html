@@ -1,56 +1,56 @@
 <nav-jefe></nav-jefe>
 <div class="container">
-  <h2>Crear usuario</h2>
+  <h2>CREAR USUARIO</h2>
   <div class="col-auto">
     <form [formGroup]="formulario" class="row y justify-content-center" (ngSubmit)="onSubmit()">
       <div class="col-11">
-        <label class="form-label">Name</label>
+        <label class="form-label">NOMBRE</label>
         <input type="text" class="form-control" formControlName="name">
       </div>
       <div class="col-11">
-        <label class="form-label">Surname</label>
+        <label class="form-label">APELLIDO</label>
         <input type="text" class="form-control" formControlName="surname">
       </div>
       <div class="col-11">
-        <label class="form-label">Email</label>
+        <label class="form-label">EMAIL</label>
         <input type="email" class="form-control" formControlName="email">
       </div>
       <div class="col-11">
-        <label class="form-label">Password</label>
+        <label class="form-label">CONTRASEÑA</label>
         <input type="text" class="form-control" formControlName="password">
       </div>
       <div class="col-11">
-        <label class="form-label">Phone</label>
+        <label class="form-label">TELÉFONO</label>
         <input type="email" class="form-control" formControlName="phone">
       </div>
       <div class="col-11">
-        <label class="form-label">Adress</label>
+        <label class="form-label">DIRECCIÓN</label>
         <input type="email" class="form-control" formControlName="adress">
       </div>
       <div class="col-11">
-        <label class="form-label">Dni</label>
+        <label class="form-label">DNI</label>
         <input type="dni" class="form-control" formControlName="dni">
       </div>
       <div class="col-11">
-        <label class="form-label">gender</label>
+        <label class="form-label">GÉNERO</label>
         <select class="form-select" formControlName="gender">
           <option selected hidden></option>
-          <option value="f">mujer</option>
-          <option value="m">hombre</option>
-          <option value="other">otro</option>
-          <option value="n/d">prefiero no responder</option>
+          <option value="f">Mujer</option>
+          <option value="m">Hombre</option>
+          <option value="other">Otro</option>
+          <option value="n/d">Prefiero no responder</option>
         </select>
       </div>
       <div class="col-11">
-        <label class="form-label">Categoría</label>
+        <label class="form-label">CATEGORÍA</label>
         <select class="form-select" formControlName="category">
           <option selected hidden></option>
-          <option value="operario">operario</option>
-          <option value="encargado">encargado</option>
+          <option value="operario">Operario</option>
+          <option value="encargado">Encargado</option>
         </select>
       </div>
       <div class="col-11">
-        <label class="form-label">Warehouses</label>
+        <label class="form-label">ALMACENES</label>
         <select class="form-select" formControlName="warehouse_id">
           <option [value]="warehouse.id" *ngFor="let warehouse of warehouses">{{warehouse.name}}</option>
         </select>

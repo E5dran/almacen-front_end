@@ -1,45 +1,45 @@
 <nav-operario></nav-operario>
 <div class="container">
-    <h2>NEW ORDER</h2>
-    <div class="col-auto">
-        <form [formGroup]="createOrder" class="row y justify-content-center " (ngSubmit)="onSubmit()">
-            <div class="col-7">
-                <label class="form-label">DESTINATION WAREHOUSE</label>
-                <select type="text" class="form-select" formControlName="destination_wh_id">
-                    <option *ngFor="let warehouse of warehouses" [value]="warehouse.id">{{warehouse.name}}</option>
-                </select>
-            </div>
-            <div class="col-7">
-                <label class="form-label">ADDRESSEE</label>
-                <input type="text" class="form-control" formControlName="addressee">
-            </div>
-            <div class="col-7">
-                <label class="form-label">DESCRIPTION</label>
-                <input type="text" class="form-control" formControlName="description">
-            </div>
-            <div class="col-7">
-                <label class="form-label">Nº ITEMS</label>
-                <input type="text" class="form-control" formControlName="n_items">
-            </div>
-            <div class="col-7">
-                <label class="form-label">DESTINATION ADDRESS</label>
-                <input type="text" class="form-control" formControlName="destination_address">
-            </div>
-            <div class="col-7">
-                <label class="form-label">TRUCK PLATE</label>
-                <input type="text" class="form-control" formControlName="truck_plate">
-            </div>
-            <div class="col-7">
-                <label class="form-label">DEPARTURE DATE</label>
-                <input type="date" class="form-control" formControlName="departure_date">
-            </div>
-            <div class="col-7">
-                <label class="form-label">ARRIVAL DATE</label>
-                <input type="date" class="form-control" formControlName="arrival_date">
-            </div>
-            <div class="col-6 mt-3">
-                <input type="submit" value="CREATE" class="btn btn-info">
-            </div>
-        </form>
-    </div>
+  <h2>NUEVO PEDIDO</h2>
+  <div class="col-auto">
+    <form [formGroup]="createOrder" class="row y justify-content-center " (ngSubmit)="onSubmit()">
+      <div class="col-7">
+        <label class="form-label">ALMACÉN DE DESTINO</label>
+        <select type="text" class="form-select" formControlName="destination_wh_id">
+          <option *ngFor="let warehouse of warehouses" [value]="warehouse.id">{{warehouse.name}}</option>
+        </select>
+      </div>
+      <div class="col-7">
+        <label class="form-label">DESTINATARIO</label>
+        <input type="text" class="form-control" formControlName="addressee">
+      </div>
+      <div class="col-7">
+        <label class="form-label">DESCRIPCIÓN</label>
+        <input type="text" class="form-control" formControlName="description">
+      </div>
+      <div class="col-7">
+        <label class="form-label">Nº DE BULTOS</label>
+        <input type="text" class="form-control" formControlName="n_items">
+      </div>
+      <div class="col-7">
+        <label class="form-label">DIRECCIÓN DE DESTINO</label>
+        <input type="text" class="form-control" formControlName="destination_address">
+      </div>
+      <div class="col-7">
+        <label class="form-label">MATRÍCULA DE CAMIÓN</label>
+        <input type="text" class="form-control" formControlName="truck_plate">
+      </div>
+      <div class="col-7">
+        <label class="form-label">FECHA DE SALIDA</label>
+        <input type="date" class="form-control" formControlName="departure_date">
+      </div>
+      <div class="col-7">
+        <label class="form-label">FECHA DE LLEGADA</label>
+        <input type="date" class="form-control" formControlName="arrival_date">
+      </div>
+      <div class="col-6 mt-3">
+        <input type="submit" value="CREAR" class="btn btn-info">
+      </div>
+    </form>
+  </div>
 </div>

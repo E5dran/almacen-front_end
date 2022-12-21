@@ -1,19 +1,19 @@
 <nav-jefe></nav-jefe>
 <div class="container">
-  <h2>Warehouse modify</h2>
+  <h2>MODIFICAR ALMACÉN</h2>
   <div class="col-auto">
     <form [formGroup]="formulario" class="row y justify-content-center" (ngSubmit)="onSubmit()">
       <div class="col-12">
-        <label class="form-label">Name</label>
+        <label class="form-label">NOMBRE</label>
         <input type="text" class="form-control" formControlName="name">
       </div>
       <div class="col-12">
-        <label class="form-label">Address</label>
+        <label class="form-label">DIRECCIÓN</label>
         <input type="text" class="form-control" formControlName="address">
       </div>
       <div class="col-4">
-        <button class="btn btn-danger m-3" (click)="deleteClick()">Delete</button>
-        <input type="submit" value="Send" [disabled]="!formulario.valid" class="btn btn-info m-3" [ngClass]="{'btn-danger': !formulario.valid}">
+        <button class="btn btn-danger m-3" (click)="deleteClick()">Eliminar</button>
+        <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-info m-3" [ngClass]="{'btn-danger': !formulario.valid}">
       </div>
     </form>
   </div>
