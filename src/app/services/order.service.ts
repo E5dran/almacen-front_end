@@ -85,4 +85,10 @@ export class OrderService {
       this.httpClient.post<any>(this.urlBase + 'addressee/', orderAddressee)
     )
   }
+
+  getByUserId(userId: number): Promise<Order[]> {
+    return firstValueFrom(
+      this.httpClient.get<Order[]>(this.urlBase + 'user/' + userId)
+    )
+  }
 }
