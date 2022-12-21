@@ -19,7 +19,6 @@ export class SupervisadosComponent implements OnInit {
     this.nombre = '';
     this.fecha = new Date();
     this.warehouse = 0;
-
   }
 
   async ngOnInit() {
@@ -29,9 +28,4 @@ export class SupervisadosComponent implements OnInit {
     this.warehouse = tokenInfo.warehouse_id;
     this.orders = await this.orderService.getByWarehouseIdStatus(this.warehouse!, 1)
   }
-
-
-
-
-
 }
