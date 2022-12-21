@@ -24,7 +24,7 @@
         <td>{{order.addressee}}</td>
         <td>{{order.description}}</td>
         <td>{{order.destination_address}}</td>
-        <td>{{order.departure_date}}</td>
+        <td>{{order.departure_date | date: 'shortDate'}}</td>
         <td>{{order.truck_plate}}</td>
         <td>{{order.category}}</td>
       </tr>

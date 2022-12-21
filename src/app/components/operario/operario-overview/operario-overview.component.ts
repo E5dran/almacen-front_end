@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/interfaces/order.interface';
-import { DatePipe } from '@angular/common';
 import { OrderService } from 'src/app/services/order.service';
 
 

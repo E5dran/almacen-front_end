@@ -18,6 +18,7 @@ export class OrderModifyComponent implements OnInit {
     this.word = '';
   }
   async ngOnInit() {
+    // cambiar a MIS pedidos
     this.arrModOrder = await this.orderService.getAll();
   }
 
