@@ -44,10 +44,12 @@ export class EntradaComponent implements OnInit {
   async updateStatus() {
     const currentdate = new Date();
     const letra = 'a'
+    const nStatus = 1;
     for (let order of this.sendOrders) {
       const orderId = order.id;
-      await this.orderService.updateStatus(orderId, letra);
+      await this.orderService.updateCategory(orderId, letra);
       await this.orderService.updateArrivalDate(orderId, currentdate);
+      await this.orderService.updateStatus(orderId, nStatus);
       window.location.reload();
     }
   }

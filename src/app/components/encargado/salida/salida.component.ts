@@ -45,7 +45,7 @@ export class SalidaComponent implements OnInit {
     const letra = 'e'
     for (let order of this.sendOrders) {
       const orderId = order.id;
-      await this.orderService.updateStatus(orderId, letra);
+      await this.orderService.updateCategory(orderId, letra);
       await this.orderService.updateDepartureDate(orderId, currentdate);
       await this.orderService.updateWarehouseId(orderId, order.destination_wh_id);
       window.location.reload();
