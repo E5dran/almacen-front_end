@@ -51,10 +51,17 @@ export class OrderService {
       this.httpClient.get<Order[]>(this.urlBase + 'warehouse/' + pId + '/status/' + pStatus + '/category/' + pCategory))
   }
 
-  updateStatus(orderId: number, category: string) {
+  updateCategory(orderId: number, category: string) {
     const cat = { category }
     return firstValueFrom(
       this.httpClient.put<any>(this.urlBase + orderId + '/category', cat)
+    );
+  }
+
+  updateStatus(orderId: number, status: number) {
+    const stat = { status }
+    return firstValueFrom(
+      this.httpClient.put<any>(this.urlBase + orderId + '/category', stat)
     );
   }
 
