@@ -1,22 +1,22 @@
 <nav-jefe></nav-jefe>
 <div class="container">
-    <h2>Almacenes</h2>
-
+  <h2>Almacenes</h2>
+  <div class="overflow-scroll">
     <table class="table table-sm">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">NAME</th>
-                <th scope="col">ADDRESS</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            <tr *ngFor="let warehouse of arrWarehouses">
-                <td>{{warehouse.id}}</td>
-                <td>{{warehouse.name}}</td>
-                <td>{{warehouse.address}}</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">NAME</th>
+          <th scope="col">ADDRESS</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let warehouse of arrWarehouses">
+          <td>{{warehouse.id}}</td>
+          <td>{{warehouse.name}}</td>
+          <td>{{warehouse.address}}</td>
+        </tr>
+      </tbody>
     </table>
-
+  </div>
 </div>

@@ -1,12 +1,24 @@
 h2 {
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+
+}
+
+.overflow-scroll {
+  overflow: scroll;
+  height: 600px;
 }
 
 .table {
-    overflow: scroll;
+  overflow: scroll;
+  position: relative;
+}
+
+.table th {
+  position: sticky;
+  background-color: white;
+  top: 0;
 }
 
 .table tbody tr {
-    cursor: pointer;
+  cursor: pointer;
 }
