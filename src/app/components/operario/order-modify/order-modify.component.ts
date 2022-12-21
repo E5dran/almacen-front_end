@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Order } from 'src/app/interfaces/order.interface';
 import { OrderService } from 'src/app/services/order.service';
+import jwt_decode from "jwt-decode";
 
 @Component({
   selector: 'app-order-modify',
@@ -12,14 +12,20 @@ export class OrderModifyComponent implements OnInit {
 
   word: string;
   arrModOrder: Order[];
+  userId: number;
 
   constructor(private orderService: OrderService) {
     this.arrModOrder = [];
     this.word = '';
+    this.userId = 0;
   }
+
   async ngOnInit() {
-    // cambiar a MIS pedidos
-    this.arrModOrder = await this.orderService.getAll();
+    const tokenInfo = jwt_decode(localStorage.getItem('token')!) as any;
+
+    this.userId = tokenInfo.user_id;
+
+    this.arrModOrder = await this.orderService.getByUserId(this.userId);
   }
 
   async searchName(pName: string) {
