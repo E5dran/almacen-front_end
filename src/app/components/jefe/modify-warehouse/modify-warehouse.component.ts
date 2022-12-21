@@ -23,6 +23,16 @@ export class ModifyWarehouseComponent implements OnInit {
     this.arrModwarehouse = await this.warehouseService.getAll()
   }
 
+  async onKey(event: any) {
+    this.word = event.target.value;
+    if (this.word === '') {
+      this.arrModwarehouse = await this.warehouseService.getAll()
+      return;
+    } else {
+      this.arrModwarehouse = await this.warehouseService.getByWarehouseName(this.word)
+    }
+  };
+
 
   async searchName(pName: string) {
     if (pName === '') {

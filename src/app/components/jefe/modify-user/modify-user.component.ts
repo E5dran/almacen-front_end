@@ -25,6 +25,17 @@ export class ModifyUserComponent implements OnInit {
   }
 
 
+  async onKey(event: any) {
+    this.dni = event.target.value;
+    if (this.dni === '') {
+      this.arrModUser = await this.userService.getAll()
+      return;
+    } else {
+      this.arrModUser = this.arrModUser = await this.userService.getByDni(this.dni)
+    }
+  };
+
+
   async searchUserDni(pDni: string) {
     if (pDni === '') {
       this.arrModUser = await this.userService.getAll()
